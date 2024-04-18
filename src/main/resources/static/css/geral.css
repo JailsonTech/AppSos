@@ -1,0 +1,12 @@
+.reply_login img{
+   width:clamp(2em, 3em + 1vw, 3vw);
+   height:auto;
+}
+   
+a.links-pag{
+   display:block;
+   max-width:max-content;
+   height:auto;
+   text-decoration:none;
+   cursor:pointer;
+}
