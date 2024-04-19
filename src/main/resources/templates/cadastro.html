@@ -11,7 +11,7 @@
 
 <body class="body_cadastro">
 
-    <a link href="index.html" class="links-pag">
+    <a href="/index" class="links-pag">
         <figure class="reply_login">
             <img src="/images/reply_black_24dp.png">
         </figure>
@@ -21,18 +21,18 @@
     </figure>
     <h2 class="text-cadastro">CADASTRO</h2>
     <div class="container_cadastro">
-        <form class="form_cadastro">
+        <form class="form_cadastro" action="cadastro.html" method="post">
             <div class=" container_cadastro-nome">
                 <label for="nome" class="label_cadastro label_cadastro-nome" >Nome</label><br>
-                <input type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome" required>
+                <input type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome" placeholder="Digite seu primeiro nome" required>
             </div>
             <div class="containers_cadastro container_cadastro-email">
                 <label for="email" class="label_cadastro label_cadastro-email">Email</label><br>
-                <input type="email" class="input_cadastro input_cadastro-email" id="email" name="email" required>
+                <input type="email" class="input_cadastro input_cadastro-email" id="email" name="email" placeholder="Digite seu email" required>
             </div>
             <div class="containers_cadastro container_cadastro-psw">
                 <label for="email" class="label_cadastro label_cadastro-psw">Password</label><br>
-                <input type="password" class="input_cadastro input_cadastro-password" id="password" name="psw" required>
+                <input type="password" class="input_cadastro input_cadastro-password" id="password" name="psw" placeholder="Digite sua senha" required>
             </div>
             <button type="submit" class="btn_cadastro btn_1-cadastro -">Enviar</button>
         </form>
