@@ -7,7 +7,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class UserController {
 
     @GetMapping("/cadastro")
-    public String cadastreNewUser(){
+    public String cadastro(){
         return "cadastro";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/index")
+    public String index(){
+        return "index";
+    }
+
+    @GetMapping("/home")
+    public String home(){
+        return "home";
+    }
 }
+
+
+

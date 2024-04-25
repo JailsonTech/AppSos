@@ -128,6 +128,7 @@ div.coloredStrip{
 }
 
 /*....PROCEDIMENTOS EMERGENCIAIS....*/
+
 div#procedimentos{ 
    display:flex;
    flex-direction: row;
@@ -140,7 +141,6 @@ div#procedimentos{
    padding:5px 0;
    background-color: #FCE898;
 }
-
 p.cruz{
    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
    font-weight:bold; 
@@ -173,7 +173,7 @@ h3.text-procedimentos{
 /*....LINKS PROCEDIMENTOS...*/
 a.links_procedimentos{
    display:block;
-   width:100%;
+   min-width:375px;
    height:auto;
    text-decoration:none;
    cursor:pointer;
@@ -214,6 +214,14 @@ div.container-links{
    filter:sepia(100);
 } 
 /*..........CONFIGURAÇÕES ESPECÍFICAS.......*/
+
+/*.......IMC.......*/
+.container-imc{
+   background-image: url("/images/imc.png");
+}
+.heart-imc{
+   filter: hue-rotate(90deg);
+}
 
 /*.....DESMAIOS.....*/
 .figure-desmaio img{
