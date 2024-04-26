@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="tb_users")
-public class TabUsers {
+public class Users{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +17,7 @@ public class TabUsers {
 
 //.......CONSTRUTOR SEM ARGUMENTOS........
 
-    public TabUsers(){
+    public Users(){
 
     }
 //.......GETTER & SETTER................
