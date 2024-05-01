@@ -8,12 +8,20 @@ public class Users{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name="nome", length=100, nullable = false)
     private String nome;
+
     @Column(name="email", length=180, nullable = false)
     private String email;
+
     @Column(name="senha", length=15, nullable = false)
     private String senha;
+
+//..........CHAVE ESTRANGEIRA - Imc (entidade)................
+@OneToOne
+@JoinColumn(name = "Imc_id")
+private Imc imc;
 
 //.......CONSTRUTOR SEM ARGUMENTOS........
 

@@ -5,60 +5,64 @@
    margin:0;
 }
 
-/*....container geral....*/
+/*....container geral app....*/
 section#containerGeral_home{
    display:flex;
    flex-direction: column;
    align-items: center;
    align-content: center;
-   margin:0;
+   margin:10px auto 10px;
    padding:0;
-   width:100%;
+   width:max-content;
    height:100%;
    box-sizing: border-box; 
+   background: linear-gradient(#e66464af, #c4c7f094, #d6e5916e);
 }
 
 /*....faixa escura no topo....*/
 div.coloredStrip{
-   min-width: 100%;
+   min-width: 360px;
    height:40px;
-   margin: 0 auto;
+   margin:auto;
    box-sizing: border-box;
    background-color: #350606;
 }
 
-/*....container cabeçalho....*/
+/*....container geral cabeçalho....*/
 .container-header{
    display:flex;
    flex-direction: column; 
    align-items: center;
    align-content:center;
-   width:100%;
+   min-width: 360px;
    height:auto;
    margin:auto;
    padding:10px 0;
-   background: linear-gradient(#d8cccc9c, #ff9e9e99);
-}
+   background: linear-gradient(#e4d1d17c, #ffafaf79);
 
+}
+/*....container header primeiros socorros....*/
 .divHeader{
    display:flex;
    flex-direction: row;
-   gap:20px;
-   align-items: center;
+   gap:2em;   
+   align-items:center;
    align-content:center;
-   max-width:100%;
+   width: max-content;
    height:auto;
    margin:auto;
+   padding:0;
 }
 
 .figure-heartHome{
-   display:flex;
+   display:block;
    align-items: center;
    align-content:center;
    max-width: 100%;
    height:auto;
    margin:0;
    padding:0;
+   
 }
 
 .figure-heartHome img{
@@ -66,19 +70,20 @@ div.coloredStrip{
    height:auto;
    padding:0;
    margin:auto;
+   
  }
 
- div.container-textHeader{
+ .container-textHeader{
    display:flex;
    flex-direction: row;
    align-items: center;
    align-content:center;
-   max-width: 100%;
+   width: content;
    height:auto;
    margin:auto;
    position:relative;
  }
-
+/*......text-primeiros socorros.......*/
 .text-header{
    display:flex;
    align-items: center;
@@ -87,7 +92,7 @@ div.coloredStrip{
    height:auto;
    margin:0;
    padding:0;
-   font-size:clamp(1.3em, 2em + 1vw, 1vw);
+   font-size:clamp(1.4em, 2em + 1vw, 1vw);
 }
 
 .textCruz{ 
@@ -112,14 +117,24 @@ div.coloredStrip{
 .figure-barHome img{
    width:45px;
    height:auto;
-   padding:0;
+   padding:5px;
    margin:auto;
 }
 
+div.container_texto_Chame_Emerg{
+   width:max-content;
+   height:auto;
+   margin:auto;
+   padding:0;
+
+}
+
 .text_chame{
-   font-size:clamp(0.875rem, 1em + 1vw, 2vw);
+   font-size:clamp(0.875em, 1em + 1vw, 2vw);
    margin:5px auto 0;
    padding:0;
+   width:content;
+   height:auto;
 }
 
 .text_chame span{
@@ -127,7 +142,7 @@ div.coloredStrip{
   
 }
 
-/*....PROCEDIMENTOS EMERGENCIAIS....*/
+/*....TEXTO PROCEDIMENTOS EMERGENCIAIS....*/
 
 div#procedimentos{ 
    display:flex;
@@ -135,17 +150,17 @@ div#procedimentos{
    align-items: center;
    justify-content:center;
    gap:5px;
-   width: 100%;
+   width:100%;
    height:100%; 
    margin:5px auto;
-   padding:5px 0;
-   background-color: #FCE898;
+   padding:10px 0; 
+   background-color: #d8bfd091;
+   box-shadow: 1px -11px 20px -2px rgba(170, 124, 124, 0.71);
 }
 p.cruz{
    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
    font-weight:bold; 
    font-size: clamp(1.2em, 1rem + 1vw, 2vw);
-   background-color: #f0df997d;    
    max-width:100%;
    height:auto;
    text-align: center;
@@ -160,12 +175,12 @@ p.cruz{
 
 h3.text-procedimentos{
    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
-  max-width:100%;
+   max-width:100%;
    height:auto;
    margin:auto 0;
    padding:0;
    text-align: center;
-   font-size: clamp(1em, 1rem + 1vw, 2vw);
+   font-size: clamp(1em, .5rem + .5vw, 2vw);
 }
 
 /*..........CONFIGURAÇÕES GERAL.......*/
@@ -173,10 +188,16 @@ h3.text-procedimentos{
 /*....LINKS PROCEDIMENTOS...*/
 a.links_procedimentos{
    display:block;
-   min-width:375px;
+   min-width:355px;
    height:auto;
    text-decoration:none;
    cursor:pointer;
+}
+.texto_links{
+   font-size:clamp(1.3rem, 1em + 1vw, 2vw);
+   max-width: 100%;
+   margin:0;
+   padding:0;
 }
 
 div.container-links{
@@ -189,8 +210,7 @@ div.container-links{
    margin:9px 30px;
    padding:12px 20px;
    box-shadow: 1px 1px 3px #002222;
-   border-radius:10px;   
-   background-color: #cc93932b;
+   border-radius:10px; 
 }
 
 .links_figures{
@@ -215,13 +235,15 @@ div.container-links{
 } 
 /*..........CONFIGURAÇÕES ESPECÍFICAS.......*/
 
-/*.......IMC.......*/
+/*.......CALCULADORA IMC.......*/
+
 .container-imc{
    background-image: url("/images/imc.png");
+   color:#fff;
+   filter: grayscale(52%) sepia(70%);
 }
-.heart-imc{
-   filter: hue-rotate(90deg);
-}
+
+
 
 /*.....DESMAIOS.....*/
 .figure-desmaio img{
@@ -231,38 +253,13 @@ div.container-links{
    margin:0;
 }
 
-/*.....ENGASGOS imagem.....*/
-.figure-engasgos img{
-   width:50px;
-   height:auto;
-   padding:0;
-   margin:0; 
-}
-
-/*.....ENGASGOS texto.....*/
-h3.text-engasgos{
-   font-size:clamp(1.3rem, 1em + 1vw, 2vw);
-   max-width: 100%;
-   margin:0;
-   padding:0;
-   transform:translateX(5px);
-}
-
 /*.....EPILEPSIA imagem.....*/
 .figure-epilepsia img{
    width:100px;
    height:auto;
    padding:0;
    margin:0;
-}
-
-/*.....EPLEPSIA texto.....*/
-h3.text-epilepsia{
-   font-size:clamp(1.3rem, 1em + 1vw, 2vw);
-   max-width: 100%;
-   margin:0;
-   padding:0;
-   transform:translateX(-15px);
+   transform: rotateZ(-10deg) translateX(-15px);
 }
 
 /*.....HEMORRAGIA imagem.....*/
@@ -272,16 +269,6 @@ h3.text-epilepsia{
    padding:0;
    margin:0;
 }
-
-/*.....HEMORRAGIA texto.....*/
-h3.text-hemorragia{
-   font-size:clamp(1.3rem, 1em + 1vw, 2vw);
-   max-width: 100%;
-   margin:0;
-   padding:0;
-   transform:translateX(7px);
-}
-
 /*.....FRATURAS imagem.....*/
 .figure-fratura img{
    width:50px;
@@ -298,12 +285,6 @@ h3.text-hemorragia{
    margin:0;
 }
 
-h3.links_text{
-   font-size:clamp(1.3rem, 1em + 1vw, 2vw);
-   max-width: 100%;
-   margin:0;
-   padding:0;
-}
 
 /*..........FOOTER...........*/
 #container-footer{

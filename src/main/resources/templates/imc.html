@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA IMC</title>
+    <link rel="stylesheet" href="/css/imc.css">
+    <link rel="stylesheet" href="/css/geral.css" />
+    <script src="script/imc.js"></script>
+
+</head>
+
+<body class="body_imc">
+    
+
+<section class="container-geral-calculadora">
+    <div class="imcHeader">
+        <a href="home" class="reply">
+            <figure class="figureReply">
+                <img src="/images/reply_black_24dp.png">
+            </figure>
+        </a>        
+    </div>
+    <h2 class="title_CalculeImc">CALCULE O IMC</h2>
+    
+    <form th:object = "${calculoimc}" action="calcularImc" method="post" class="formCalculo">
+        <div class="container-peso" >
+            <label for="weight" class="label_peso" th:field="*{peso}">Peso</label><br>
+            <input  type="number" class="input_peso" id="weight" name="peso" placeholder="Digite o peso" required autocomplete="off">
+        </div>
+        <div class="container-altura">
+            <label for="height" class="label_altura" th:field="*{altura}">Altura</label><br>
+            <input  type="number" class="input_altura" id="height" name="altura" placeholder="Digite a altura" required autocomplete="off" >
+        </div>
+        <div>
+          <button type="submit" class="button_imc" onclick="calcularIMC()">Calcular</button>
+          <button type="submit" class="button_imc limpar" onclick="limparCampos()">Limpar</button>
+        </div>        
+    </form>
+    <div class="container-resultado">
+        <h4 id="saida1"></h4>
+        <h4 id="saida2"></h4>        
+    </div>
+    <figure class="img_created">
+    </figure>
+</section>
+</body>
+</html>
