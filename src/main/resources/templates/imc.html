@@ -23,13 +23,13 @@
     </div>
     <h2 class="title_CalculeImc">CALCULE O IMC</h2>
     
-    <form th:object = "${calculoimc}" action="calcularImc" method="post" class="formCalculo">
+    <form class="formCalculo">
         <div class="container-peso" >
-            <label for="weight" class="label_peso" th:field="*{peso}">Peso</label><br>
+            <label for="weight" class="label_peso">Peso</label><br>
             <input  type="number" class="input_peso" id="weight" name="peso" placeholder="Digite o peso" required autocomplete="off">
         </div>
         <div class="container-altura">
-            <label for="height" class="label_altura" th:field="*{altura}">Altura</label><br>
+            <label for="height" class="label_altura" >Altura</label><br>
             <input  type="number" class="input_altura" id="height" name="altura" placeholder="Digite a altura" required autocomplete="off" >
         </div>
         <div>

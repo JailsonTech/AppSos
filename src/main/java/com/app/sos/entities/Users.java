@@ -1,6 +1,6 @@
 package com.app.sos.entities;
-
 import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name="tb_users")
@@ -17,11 +17,6 @@ public class Users{
 
     @Column(name="senha", length=15, nullable = false)
     private String senha;
-
-//..........CHAVE ESTRANGEIRA - Imc (entidade)................
-@OneToOne
-@JoinColumn(name = "Imc_id")
-private Imc imc;
 
 //.......CONSTRUTOR SEM ARGUMENTOS........
 

@@ -17,13 +17,12 @@ if (isNaN(peso) || isNaN(altura) || peso=="" || altura == "") {
 if (resultado < 18.5) {
         background.style.backgroundColor = "#f3ff85";
         color.style.color = "#000000";
-        mostrarImagem;
+        imagem();
         return situacao.innerHTML = "Situação: MAGREZA";  
 
     } else if (resultado >= 18.5 && resultado < 25) {
         background.style.backgroundColor= "#5ee651";
         color.style.color= "#fff";
-        mostrarImagem;
         return situacao.innerHTML = "Situação: NORMAL";  
 
     } else if (resultado >= 25 && resultado < 30) {
@@ -36,17 +35,18 @@ if (resultado < 18.5) {
         color.style.color= "#ffffff";
         return situacao.innerHTML = "Situação: OBESIDADE";  
     }  
+
 }
 
 function limparCampos() {
-        document.getElementById('weight').value = '';
-        document.getElementById('height').value = '';
-        document.getElementById('saida1').innerHTML = '';
-        document.getElementById('saida2').innerHTML = '';
+    document.getElementById('weight').value = '';
+    document.getElementById('height').value = '';
+    document.getElementById('saida1').innerHTML = '';
+    document.getElementById('saida2').innerHTML = '';
     }
 
-function mostrarFigura(){
-    let img = document.createElement('IMG');
-        img.src ='/images/ambulancia.png';
-        document.getElementById('img_created').appendChild(img);
+function imagem(){
+   let img = document.createElement('img');
+   img.src ="/images/desmaio.png";
+   document.querySelector('.img_created').appendChild(img);   
 }
