@@ -10,12 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
+    @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    public UserController(UserRepository userRepository){
-        this.userRepository = userRepository;
-    }
+   
 
     //......ACESSAR AS PÁGINAS HTML ATRAVÉS DE LINKS OU NO..............
 
@@ -34,34 +32,26 @@ public class UserController {
     @GetMapping("/resultado")
     public String pagResultado(){ return "resultadoImc"; }
 
-    @GetMapping("cadastro")
-    public String showForm(Model model) {
-        model.addAttribute("user", new User());
+    @GetMapping("/lista")
+    public String paglistUsers(){ return "listUsers"; }
+
+
+//........MOSTRAR PÁGINA CADASTRO
+    @GetMapping("/cadastro")
+    public String mostrarFormulario(User user) {
         return "cadastro";
     }
-
-    //...................ENVIAR DADOS PARA O DATABASE.................
-
-    @PostMapping("/enviar")
-    public ModelAndView cadastrar(User user) {
-        // Salvando o usuário no banco de dados
+    //........SALVAR USUÁRIOS NO BANCO
+    @PostMapping("/salvar")
+    public String salvarUsuario(User user) {
         userRepository.save(user);
-        // Criando uma ModelAndView para retornar a uma página de login
-        return new ModelAndView("listUsers");
-    }
-
-    //........MOSTRAR OS DADOS DOS USUÁRIOS CADASTRADOS...........
-
-    @GetMapping("/listUsers")
-    public String dadosUsers() {
         return "listUsers";
     }
-
-    @GetMapping("/dadosUsers")
-    public ModelAndView mostrarDados() {
-        ModelAndView modelAndView = new ModelAndView("listUsers");
-        modelAndView.addObject("users", userRepository.findAll());
-        return modelAndView;
+    //........MOSTRAR USUÁRIOS CADASTRADOS
+    @GetMapping("/mostrar")
+    public String mostrarUsuarios(Model model) {
+        model.addAttribute("users", userRepository.findAll());
+        return "listUsers";
     }
 
 }
