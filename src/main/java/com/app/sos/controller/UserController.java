@@ -1,51 +1,67 @@
 package com.app.sos.controller;
-import com.app.sos.entities.Users;
-import com.app.sos.repositories.UserRepository;
+import com.app.sos.model.User;
+import com.app.sos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
 
+    private UserRepository userRepository;
+
     @Autowired
-    private UserRepository repository;
+    public UserController(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
+    //......ACESSAR AS PÁGINAS HTML ATRAVÉS DE LINKS OU NO..............
 
     @GetMapping("/")
-    public String index() {
-        return "index";
-    }
+    public String pagIndex(){ return "index"; }
 
     @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
+    public String pagLogin(){ return "login"; }
 
     @GetMapping("/home")
-    public String home() {
-        return "home";
-    }
+    public String pagHome(){ return "home";  }
 
     @GetMapping("/imc")
-    public String imc() {
-        return "imc";
+    public String pagImc(){ return "imc"; }
+
+    @GetMapping("/resultado")
+    public String pagResultado(){ return "resultadoImc"; }
+
+    @GetMapping("cadastro")
+    public String showForm(Model model) {
+        model.addAttribute("user", new User());
+        return "cadastro";
     }
 
-    @GetMapping("/cadastro")
-    public ModelAndView cadastrar() {
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("usuario", new Users());
-        mv.setViewName("/cadastro");
-        return mv;
+    //...................ENVIAR DADOS PARA O DATABASE.................
+
+    @PostMapping("/enviar")
+    public ModelAndView cadastrar(User user) {
+        // Salvando o usuário no banco de dados
+        userRepository.save(user);
+        // Criando uma ModelAndView para retornar a uma página de login
+        return new ModelAndView("listUsers");
     }
 
-    @PostMapping("/salvarUsers")
-    public ModelAndView cadastrar(Users usuario) {
-        ModelAndView mv = new ModelAndView();
-        repository.save(usuario);
-        mv.setViewName("/login");
-        return mv;
+    //........MOSTRAR OS DADOS DOS USUÁRIOS CADASTRADOS...........
+
+    @GetMapping("/listUsers")
+    public String dadosUsers() {
+        return "listUsers";
+    }
+
+    @GetMapping("/dadosUsers")
+    public ModelAndView mostrarDados() {
+        ModelAndView modelAndView = new ModelAndView("listUsers");
+        modelAndView.addObject("users", userRepository.findAll());
+        return modelAndView;
     }
 
 }

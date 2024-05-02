@@ -4,7 +4,7 @@ peso = parseFloat(document.getElementById('weight').value);
 altura = parseFloat(document.getElementById('height').value);
 
 // Verificando se as entradas são válidas
-if (isNaN(peso) || isNaN(altura) || peso=="" || altura == "") {
+if (peso =="" || altura=="" || peso<0 || altura<0) {
     alert("Por favor, insira valores numéricos válidos.");
 }
 
@@ -17,7 +17,6 @@ if (isNaN(peso) || isNaN(altura) || peso=="" || altura == "") {
 if (resultado < 18.5) {
         background.style.backgroundColor = "#f3ff85";
         color.style.color = "#000000";
-        imagem();
         return situacao.innerHTML = "Situação: MAGREZA";  
 
     } else if (resultado >= 18.5 && resultado < 25) {
@@ -44,9 +43,3 @@ function limparCampos() {
     document.getElementById('saida1').innerHTML = '';
     document.getElementById('saida2').innerHTML = '';
     }
-
-function imagem(){
-   let img = document.createElement('img');
-   img.src ="/images/desmaio.png";
-   document.querySelector('.img_created').appendChild(img);   
-}

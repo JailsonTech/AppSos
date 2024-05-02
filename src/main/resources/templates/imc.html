@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA IMC</title>
-    <link rel="stylesheet" href="/css/imc.css">
-    <link rel="stylesheet" href="/css/geral.css" />
+    <link rel="stylesheet" th:href="@{/css/imc.css}">
+    <link rel="stylesheet" th:href="@{/css/geral.css}">
     <script src="script/imc.js"></script>
 
 </head>
@@ -15,7 +15,7 @@
 
 <section class="container-geral-calculadora">
     <div class="imcHeader">
-        <a href="home" class="reply">
+        <a th:href="@{/home}"  class="reply">
             <figure class="figureReply">
                 <img src="/images/reply_black_24dp.png">
             </figure>
@@ -34,15 +34,9 @@
         </div>
         <div>
           <button type="submit" class="button_imc" onclick="calcularIMC()">Calcular</button>
-          <button type="submit" class="button_imc limpar" onclick="limparCampos()">Limpar</button>
-        </div>        
+            </div>        
     </form>
-    <div class="container-resultado">
-        <h4 id="saida1"></h4>
-        <h4 id="saida2"></h4>        
-    </div>
-    <figure class="img_created">
-    </figure>
+    
 </section>
 </body>
 </html>

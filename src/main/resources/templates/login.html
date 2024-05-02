@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN</title>
-    <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="/css/geral.css" />
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <link rel="stylesheet" th:href="@{/css/geral.css}" />
   </head>
 
   <body class="body_login">
 
-    <a href="/" class="links-pag">
+    <section class="containerGeral-login">
+
+    <a th:href="@{/}" class="links-pag">
         <figure class="reply_login">
             <img src="/images/reply_black_24dp.png">
         </figure>
@@ -35,7 +37,8 @@
             <button type="submit" class="btn btn_1-login">ENTRAR</button>
         </form>
         <p class="text_login-informativo">
-            Entre com seu e-mail e senha para usar o aplicativo
+            <img class="person" src="/images/person.png" alt="ícon person/ ícone de uma pessoa">
+            <a th:href="@{/listUsers}"  class="link-usuarios" >Usuários cadastrados</a>
         </p>
     </div>
 </section>

@@ -1,6 +1,11 @@
 .reply_login img{
    width:clamp(2em, 3em + 1vw, 3vw);
    height:auto;
+   margin:0;
+   position:absolute;
+   top:0;
+   left:3%;
+
 }
    
 a.links-pag{

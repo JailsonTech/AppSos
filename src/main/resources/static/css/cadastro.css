@@ -1,10 +1,25 @@
 .body_cadastro{
    background-color:#d9DF89;
-   padding:20px 10px;
+   padding:20px 0;
+   
+   }
+
+   section.containerGeral-cadastro{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   align-content: center;
+   max-width: min-content;
+   max-height:80%;
+   margin:auto;
+   padding:10px;
+   border:solid 1px #4d4b4b;
+   
+   position:relative;
    }
 
    figure.heart_cadastro{
-      max-width:100%;
+      width:100%;
       height:auto;
       margin:auto; 
       display:flex;
@@ -19,7 +34,7 @@
       margin:auto;
    }
    h2.text-cadastro{
-      max-width:100%;
+      width:100%;
       height:auto;
       text-align:center;
       margin:1em auto 0;
@@ -47,7 +62,7 @@
       gap:15px;
    }
    .label_cadastro{
-   font-size: clamp(18px, 18px + 1vw, 1.2vw);
+   font-size: clamp(1.2em, 18px + 1vw, 1.2vw);
    width:max-content;
    height:auto;
    }
@@ -56,8 +71,9 @@
       width:clamp(280px, 500px, 33vw);
       height:auto;
       margin:auto;
-      padding:8px 5px;
-      box-shadow:1px 1px 3px #959;  
+      padding:10px 5px;
+      box-shadow:1px 1px 3px 3px #490949a4;  
+      border:none;
    
    }
    button.btn_1-cadastro{
