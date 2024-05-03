@@ -22,7 +22,7 @@
     </figure>
     <h2 class="text-cadastro">CADASTRO</h2>
     <div class="container_cadastro">
-        <div th:if="${mensagem}" class="alert" id="alerta">
+        <div th:if="${mensagem}" class="alert" id="alerta" onsubmit="limparCampos()" >
             <p th:text="${mensagem}"></p>
         </div>
         <form class="form_cadastro" th:action="@{/salvar}" th:object="${newUser}"  method="post" onsubmit="limparCampos()">
