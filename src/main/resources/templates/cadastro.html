@@ -6,6 +6,8 @@
     <title>CADASTRO</title>
     <link rel="stylesheet" th:href="@{/css/cadastro.css}">
     <link rel="stylesheet" th:href="@{/css/geral.css}">
+    <script th:src="@{/script/cadastro.js}"></script>
+
 </head>
 
 <body class="body_cadastro">
@@ -20,7 +22,10 @@
     </figure>
     <h2 class="text-cadastro">CADASTRO</h2>
     <div class="container_cadastro">
-        <form class="form_cadastro" th:object="${user}" th:action="@{/salvar}" method="post">
+        <div th:if="${mensagem}" class="alert" id="alerta">
+            <p th:text="${mensagem}"></p>
+        </div>
+        <form class="form_cadastro" th:action="@{/salvar}" th:object="${newUser}"  method="post" onsubmit="limparCampos()">
             <div class=" container_cadastro-nome">
                 <label for="nome" class="label_cadastro label_cadastro-nome">Nome</label><br>
                 <input th:field="*{nome}" type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome" placeholder="Digite seu primeiro nome" required>
@@ -38,5 +43,4 @@
     </div>
 </section>
 </body>
-
 </html>

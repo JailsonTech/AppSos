@@ -1,6 +1,6 @@
 package com.app.sos.controller;
 import com.app.sos.model.User;
-import com.app.sos.repository.UserRepository;
+import com.app.sos.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
    
 
@@ -35,22 +35,23 @@ public class UserController {
     public String paglistUsers(){ return "listUsers"; }
 
 
-//........MOSTRAR PÁGINA CADASTRO
+//........RETORNO E PERSISTÊNCIA DE DADOS............
     @GetMapping("/cadastro")
-    public String mostrarFormulario(User user) {
-        return "cadastro";
+    public String newUser(Model model){   //......método model do spring
+        User user = new User();   //......criado objeto "user"
+        model.addAttribute("newUser", user);//......"newUser" será o "object" do formulário
+        return "/cadastro";
     }
-    //........SALVAR USUÁRIOS NO BANCO
+
+//........SALVAR USUÁRIOS NO BANCO
     @PostMapping("/salvar")
-    public String salvarUsuario(User user) {
-        userRepository.save(user);
-        return "listUsers";
-    }
-    //........MOSTRAR USUÁRIOS CADASTRADOS
-    @GetMapping("/mostrar")
-    public String mostrarUsuarios(Model model) {
-        model.addAttribute("users", userRepository.findAll());
-        return "listUsers";
+    public String salvarUser(@ModelAttribute("newUser" ) User user, Model model){
+    //ModelAttribute -> pega o objeto do html, criado no getMapping cadastro e colocado no th:object
+
+    model.addAttribute("mensagem", "Cadastro realizado!");
+    //model.addAttribute -> adiciona a mensagem no template após usuário enviar
+    userService.criarUser(user); //......método criado na classe "UserService" que enviará para o banco.
+    return "/cadastro"; //.....redireciona para a página de cadastro.
     }
 
 }
