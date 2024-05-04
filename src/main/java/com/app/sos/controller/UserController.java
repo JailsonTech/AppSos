@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 public class UserController {
 
@@ -32,10 +34,9 @@ public class UserController {
     @GetMapping("/resultado")
     public String pagResultado(){ return "resultadoImc"; }
 
-    @GetMapping("/lista")
-    public String paglistUsers(){ return "listUsers"; }
 
-//........RETORNO E PERSISTÊNCIA DE DADOS............
+
+//........PERSISTÊNCIA DE DADOS............
     @GetMapping("/cadastro")
     public String newUser(Model model){   //......método model do spring
         User user = new User();   //......criado objeto "user"
@@ -54,5 +55,16 @@ public class UserController {
 
     userService.criarUser(user);
     return "/cadastro";
+    }
+
+//........RETORNO DE DADOS.................
+    @GetMapping("/lista")
+    public String paglistUsers(Model model){
+        List<User> users = userService.findAllUsers();
+        //... O objeto, "users", será colocado na tabela html em th:each="users ${}" e em cada <td th:text="${users.id}"></td>
+        model.addAttribute("listUsers", users);
+                                         //... O atributo, "listUsers", será colocado na tabela html em ${listUsers}
+
+        return "listUsers";
     }
 }

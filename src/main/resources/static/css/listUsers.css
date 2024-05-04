@@ -9,8 +9,7 @@ section.container-listUsers{
    align-items: center;
    align-content: center;
    position:relative;
-   
-   
+      
 }
 .goback{
    display:flex;
@@ -68,14 +67,17 @@ th{
    
 }
 tr{
-    font-size:clamp(1em, .7em + 1vw, 6vw);
+    font-size:clamp(1em, .7em + 1vw, 2vw);
+}
+.folder_empty{
+   width:clamp(60px, 100px, 2vw);
 }
 td{
    background-color: #15053f;
    width:91.5px;
    height:30px;
    color:#fff;
-    font-size:clamp(1em, 1em + 4vw, 6vw);
-    text-align: center;
+    font-size:clamp(.8em, .7em + 1vw, 1vw);
     padding:7px 0;
 }
+

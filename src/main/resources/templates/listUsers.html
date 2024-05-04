@@ -20,14 +20,16 @@
          <th>Email</th>
          <th>Senha</th>
       </tr>
-      <tr th:each="user : ${users}" class="tr-list tr-td1">
-         <td th:text="${user.id}" class="td-list td-id"></td>
-         <td th:text="${user.nome}" class="td-list td-id"></td>
-         <td th:text="${user.email}" class="td-list td-id"></td>
-         <td th:text="${user.senha}" class="td-list td-id"></td>
+      <tr th:if="${listUsers.empty}" class="tr-list tr-td1">
+         <td><img class="folder_empty" src="/images/folder_empty.png"><br>Cadastre um usuário!</td>
+      </tr>         
+      <tr th:each = "users:${listUsers}">
+         <td th:text="${users.id}" class="td-list td-id"></td>
+         <td th:text="${users.nome}" class="td-list td-id"></td>
+         <td th:text="${users.email}" class="td-list td-id"></td>
+         <td th:text="${users.senha}" class="td-list td-id"></td>
       </tr>
    </table>
 </section>
 </body>
-
 </html>
