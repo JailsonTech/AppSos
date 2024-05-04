@@ -1,5 +1,9 @@
 package com.app.sos.model;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="tb_users")
@@ -9,19 +13,24 @@ public class User {
     private Long id;
 
     @Column(name="nome", length=100, nullable = false)
+    @NotBlank(message = "O nome é obrigatório")
+    @Size(min=4, message="Mínimo de 4 letras exigido")
+    @Pattern(regexp = "^[\\p{L} .'-]+$", message = "Nome inválido, evite números ou caracteres.")
     private String nome;
 
     @Column(name="email", length=180, nullable = false)
+    @Email(message = "O email deve ser válido")
+    @NotBlank(message="O email é obrigatório")
+    @Pattern(regexp = ".*@(gmail\\.com|hotmail\\.com|outlook\\.com)$", message = "Insira um email do Gmail, Hotmail ou Outlook. exemplo abc@gmail.com")
     private String email;
 
-    @Column(name="senha", length=15, nullable = false)
+    @Column(name="senha", length=5, nullable = false)
+    @Pattern(regexp = "^(?=.*[0-9])(?=\\S+$).{5,}$", message = "Senha deve conter apenas 5 números.")
+    @NotBlank(message="A senha não pode ser em branco")
     private String senha;
 
-//.......CONSTRUTOR SEM ARGUMENTOS........
+    public User(){  }  //.....CONSTRUTOR SEM ARGUMENTOS
 
-    public User(){
-
-    }
 //.......GETTER & SETTER................
 
     public Long getId() { return id; }

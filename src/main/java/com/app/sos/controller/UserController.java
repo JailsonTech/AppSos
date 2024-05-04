@@ -1,18 +1,19 @@
 package com.app.sos.controller;
 import com.app.sos.model.User;
 import com.app.sos.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
 
     @Autowired
     private UserService userService;
-
-   
 
     //......ACESSAR AS PÁGINAS HTML ATRAVÉS DE LINKS OU NO..............
 
@@ -34,7 +35,6 @@ public class UserController {
     @GetMapping("/lista")
     public String paglistUsers(){ return "listUsers"; }
 
-
 //........RETORNO E PERSISTÊNCIA DE DADOS............
     @GetMapping("/cadastro")
     public String newUser(Model model){   //......método model do spring
@@ -45,13 +45,14 @@ public class UserController {
 
 //........SALVAR USUÁRIOS NO BANCO
     @PostMapping("/salvar")
-    public String salvarUser(@ModelAttribute("newUser" ) User user, Model model){
-    //ModelAttribute -> pega o objeto do html, criado no getMapping cadastro e colocado no th:object
+    public String salvarUser(Model model, @ModelAttribute("newUser") @Valid User user,  BindingResult erros, RedirectAttributes attributes) {
 
+        if (erros.hasErrors()) {
+            return "/cadastro";
+        }
     model.addAttribute("mensagem", "Cadastro realizado!");
-    //model.addAttribute -> adiciona a mensagem no template após usuário enviar
-    userService.criarUser(user); //......método criado na classe "UserService" que enviará para o banco.
-    return "/cadastro"; //.....redireciona para a página de cadastro.
-    }
 
+    userService.criarUser(user);
+    return "/cadastro";
+    }
 }
