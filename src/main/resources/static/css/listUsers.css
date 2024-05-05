@@ -3,7 +3,7 @@ section.container-listUsers{
    padding:0;
    max-width: 95%;
    height:auto;
-   background-color: #a0beffaf;
+   background-color: #d5fcffd2;
    display:flex;
    flex-direction: column;
    align-items: center;
@@ -11,27 +11,33 @@ section.container-listUsers{
    position:relative;
       
 }
-.goback{
+div.container-goback{
    display:flex;
+   flex-direction: column;
+   gap:.8em;
+   align-items:start;
+   position:absolute;
+   top:10%;
+   left:2%;
+}
+a.goback{
    width:content;
    height:auto;
    margin:0;
    padding:0;
    text-decoration:none;
    cursor:pointer;
-   position:absolute;
-   top:7%;
-   left:2%;
+   
 }
-.back{   
+h4.back{   
    display:flex;
    flex-direction: column;
    margin:0;
    padding:0;
    width:content;
    height:auto;
-   color:#000;
-   font-size:clamp(1.1em, 1.3em + .5vw, 3vw);
+   color:#5a95ec;
+   font-size:clamp(1.1em, 1.1em + .5vw, 3vw);
    transition:transform .7s ease-in-out;   
 }
 h4:hover{
@@ -57,8 +63,9 @@ h3{
 }
 
 table, tr{
-  border: 1px solid;
+border: 1px solid;  
   width:95%;  
+  overflow-x: auto;
 }
 th{
    border: 1px solid #000;
@@ -69,8 +76,42 @@ th{
 tr{
     font-size:clamp(1em, .7em + 1vw, 2vw);
 }
-.folder_empty{
-   width:clamp(60px, 100px, 2vw);
+div.aviso{
+   display:flex;
+   flex-direction: row;
+   align-items:center;
+   align-content:center;
+   margin:0 auto;
+   padding:2px 3em;
+   max-width: 100%;
+   height:auto;
+   gap: 1em;
+   background-color: #ffc107;
+}
+
+figure.container_folder{
+   display:flex;
+   align-items: center;
+   max-width: 100%;
+   height:auto;
+   margin:auto;
+   padding:0;
+   text-align: center;
+}
+
+p.alerta_cadastre{
+ display:flex;
+ align-items: center;
+  max-width:100%;
+  height:auto;
+  margin:auto;
+  padding:0;
+  font-size:clamp(1.1em, 1.2em + 1vw, 2vw);
+}
+img.folder_empty{
+   width:clamp(40px, 10px + 3vw, 15vw);
+   margin:0;
+   padding:0;
 }
 td{
    background-color: #15053f;

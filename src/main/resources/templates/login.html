@@ -34,11 +34,14 @@
                 <label for="email" class="label-login label-psw">Senha</label><br>
                 <input type="password" class="input-login input_login-psw" id="password" >
             </div>
-            <button type="submit" class="btn btn_1-login">ENTRAR</button>
+            <!--...BOTÃO SUBMIT - geral.css...-->
+            <button type="submit" class="btn-submit">ENTRAR</button>
         </form>
-        <p class="text_login-informativo">
-            <img class="person" src="/images/person.png" alt="ícon person/ ícone de uma pessoa">
-            <a th:href="@{/lista}"  class="link-usuarios" >Usuários cadastrados</a>
+
+        <!--...LINK PARA listUsers...-->
+        <p class="container-listUsers">
+            <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
+            <a th:href="@{/lista}"  class="link-users" >Usuários cadastrados</a>
         </p>
     </div>
 </section>

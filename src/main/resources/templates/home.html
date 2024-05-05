@@ -14,9 +14,10 @@
    <section id="containerGeral_home">
 
       <!--...faixa escura no topo....-->
-      <div class="coloredStrip"></div>
+      <div class="coloredStrip">
+      </div>
 
-      <!--...container geral cabeçalho....-->
+         <!--...container geral cabeçalho....-->
       <header class="container-header">
 
          <!--container header primeiros socorros-->
@@ -33,30 +34,27 @@
 
                <h2 class="text-header">PRIMEIROS<br>SOCORROS</h2>
             </div>
-
-            <figure class="figure-barHome">
-               <img class="bar-home" src="/images/bars-solid.png">
-            </figure>
-
+            <!--.......DROPDOWN-MENU.........-->
+            <div class="dropdown">
+               <figure class="figure-barHome">
+                  <img class="dropdown-toggle bar-home" src="/images/bars-solid.png" alt="barra de menu">
+               </figure>               
+                  <ul class="dropdown-menu">
+                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Home</li></a>
+                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Login</li></a>
+                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Cadastro</li></a>
+                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Lista Usuários</li></a>
+                  </ul>
+            </div>
          </div>
+      </header>      
 
-         <div class="container_texto_Chame_Emerg">
-
-            <p class="text_chame">Chame a emergência <span>&#10548</span>
-            </p>
-
-         </div>
-
-      </header>
-
-   <!--.........CALCULADORA IMC.........................................-->
-       <a href="/imc" class="links_procedimentos link-desmaios">
-         <div class="container-links container-imc">           
-                      
-            <h3 class="links_text text-desmaios">Calcule seu IMC</h3>
-
-            <figure class="figure-heartLink">
-               <img class="heart-imc" src="/images/heart.png" alt="heart">
+      <!--.........CALCULADORA IMC.........................................-->
+       <a href="/imc" class="links_procedimentos">
+         <div class="container-imc">
+            <h3 class="text-imc">Calcule seu IMC</h3>
+            <figure class="heart_imc">
+               <img class="heart-calculadora" src="/images/heart.png" alt="heart">
             </figure>
 
          </div>         
@@ -70,8 +68,6 @@
 
       <!--........LINKS PROCEDIMENTOS......................................-->
 
-      
-           
        <!--.....DESMAIOS.....-->
       <a href="" class="links_procedimentos link-desmaios">
          <div class="container-links container-desmaios">           

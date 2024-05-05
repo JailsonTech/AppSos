@@ -23,38 +23,44 @@
     <h2 class="text-cadastro">CADASTRO</h2>
 
     <div class="container_cadastro">
-
+        <!--...MENSAGEM DE SUCESSO - vinda do Controller...-->
         <div th:if="${mensagem}" class="alert" id="alerta">
             <p th:text="${mensagem}"></p>
         </div>
 
-        <form class="form_cadastro" th:action="@{/salvar}" th:object="${newUser}"  method="post" onsubmit="limparCampos()">
+        <form class="form_cadastro" th:action="@{/salvar}" th:object="${newUser}"  method="post" onsubmit="limparCampos()"><!--... LIMPAR CAMPOS função em "cadastro.js" ...-->
 
             <div class=" container_cadastro-nome">
                 <label for="nome" class="label_cadastro label_cadastro-nome">Nome</label><br>
                 <input th:field="*{nome}" type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome" placeholder="Digite seu primeiro nome"><br>
-                <!-- Apresentar o erro no formulário concernente ao nome. -->
-                <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="ms"></p>
+                <!-- MENSAGEM DE ERRO -->
+                <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="message"></p>
             </div>
 
 
             <div class="containers_cadastro container_cadastro-email">
                 <label for="email" class="label_cadastro label_cadastro-email" >Email</label><br>
                 <input th:field="*{email}" type="email" class="input_cadastro input_cadastro-email" id="email" name="email" placeholder="seu@email.com" ><br>
-                <!-- Apresentar o erro no formulário concernente ao email. -->
-                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="ms"></p>
+                <!-- MENSAGEM DE ERRO -->
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="message"></p>
             </div>
 
 
             <div class="containers_cadastro container_cadastro-psw">
                 <label for="password" class="label_cadastro label_cadastro-psw" >Password</label><br>
                 <input th:field="*{senha}" type="password" class="input_cadastro input_cadastro-password" id="password" name="senha" placeholder="Digite sua senha"><br>
-                <!-- Apresentar o erro no formulário concernente a senha. -->
-                <p th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="ms"></p>
+                <!-- MENSAGEM DE ERRO -->
+                <p th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="message"></p>
             </div>
 
-            <button type="submit" class="btn_cadastro btn_1-cadastro -">Enviar</button>
+            <button type="submit" class="btn-submit">Enviar</button>
         </form>
+
+        <!--...LINK PARA listUsers...-->
+        <p class="container-listUsers">
+            <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
+            <a th:href="@{/lista}"  class="link-users" >Usuários cadastrados</a>
+        </p>
     </div>
 </section>
 </body>

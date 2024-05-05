@@ -51,7 +51,7 @@ public class UserController {
         if (erros.hasErrors()) {
             return "/cadastro";
         }
-    model.addAttribute("mensagem", "Cadastro realizado!");
+    model.addAttribute("mensagem", "Cadastro realizado!"); //...Mensagem de sucesso no cadastro.html
 
     userService.criarUser(user);
     return "/cadastro";

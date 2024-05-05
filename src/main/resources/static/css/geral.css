@@ -6,8 +6,7 @@
    top:0;
    left:3%;
 
-}
-   
+}   
 a.links-pag{
    display:block;
    max-width:max-content;
@@ -15,3 +14,53 @@ a.links-pag{
    text-decoration:none;
    cursor:pointer;
 }
+
+ /*.....LINK PARA listUsers......LOGIN E CADASTRO*/
+p.container-listUsers{
+text-align:center;
+display:flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+width: content;
+height:auto;
+margin: 0.5em auto 0;
+padding:0;
+font-size: clamp(1.2em, 1em + .5vw, 2vw);  
+}
+
+img.person{
+width:30px;
+padding:5px;
+animation: sliding-vertically 1s forwards;
+}
+
+a.link-users{
+display:block;
+text-decoration: none;
+width:max-content;
+color:#fff;
+cursor: pointer;
+}
+
+a.link-users:hover{
+color:#a7ffbfda;
+text-shadow: 1px 1px 5px  #222;
+}
+
+/*....BOTÃO SUBMIT - Login / Cadastro....*/
+button.btn-submit{
+width:max-content;
+height:auto;
+padding:5px 15px;
+margin:1em auto 0;
+background-color: #dfc6ff;
+border:none;
+border-radius: 5px;
+box-shadow:1px 1px 3px #000000;
+color:#2b0b0b;
+font-size: clamp(1.1em, 1em + .8vw, 1.4vw);
+}
+
+
+
