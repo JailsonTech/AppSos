@@ -7,6 +7,7 @@
       <meta name="author" content="Jailson Rodrigues"/>
       <link rel="stylesheet" th:href="@{/css/home.css}">
       <link rel="stylesheet" th:href="@{/css/geral.css}">
+      <script th:src="@{/script/cadastro.js}"></script>
    </head>
 
 <body class="body_home">
@@ -35,17 +36,17 @@
                <h2 class="text-header">PRIMEIROS<br>SOCORROS</h2>
             </div>
             <!--.......DROPDOWN-MENU.........-->
-            <div class="dropdown">
-               <figure class="figure-barHome">
-                  <img class="dropdown-toggle bar-home" src="/images/bars-solid.png" alt="barra de menu">
+            <nav class="dropdown">
+               <figure class="barMenu" id="bar-trigger">
+                  <img class="dropdown-toggle bar-menu" src="/images/bar_menu.png" alt="barra de menu">
                </figure>               
-                  <ul class="dropdown-menu">
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Home</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Login</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Cadastro</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Lista Usuários</li></a>
+                  <ul class="dropdown-menu" id="dropdown-trigger">
+                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
+                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
+                     <a class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
+                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
                   </ul>
-            </div>
+            </nav>
          </div>
       </header>      
 

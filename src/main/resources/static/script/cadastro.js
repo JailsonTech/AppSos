@@ -10,7 +10,21 @@ function limparCampos() {
     document.getElementById("password").value = "";
 
 }
-function alerta(){
 
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownTrigger = document.getElementById('dropdown-trigger');
+    var barTrigger = document.getElementById('bar-trigger');
 
+    barTrigger.addEventListener('click', function(event) {
+        event.stopPropagation();
+        dropdownTrigger.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+        dropdownTrigger.classList.remove('active');
+    });
+
+    dropdownTrigger.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});

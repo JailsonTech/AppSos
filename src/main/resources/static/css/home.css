@@ -39,8 +39,8 @@ div.coloredStrip{
    margin:auto;
    padding:10px 0;
    background: linear-gradient(#e4d1d17c, #ffafaf79);
-
 }
+
 /*....container header primeiros socorros....*/
 .divHeader{
    display:flex;
@@ -61,16 +61,14 @@ div.coloredStrip{
    max-width: 100%;
    height:auto;
    margin:0;
-   padding:0;
-   
+   padding:0;   
 }
 
 .figure-heartHome img{
    width:75px;
    height:auto;
    padding:0;
-   margin:auto;
-   
+   margin:auto;   
  }
 
  .container-textHeader{
@@ -83,6 +81,7 @@ div.coloredStrip{
    margin:auto;
    position:relative;
  }
+
 /*......text-primeiros socorros.......*/
 .text-header{
    display:flex;
@@ -104,22 +103,9 @@ div.coloredStrip{
    font-size:clamp(3rem, 1em + 1vw, 2vw);
    font-family: "Dancing Script", serif;
    transform: translate(-12px, -8px);
-   position:absolute;
-   
+   position:absolute;   
 }
 
- .figure-barHome{
-   max-width: 100%;
-   height:auto;
-   margin:auto;
-}
-
-.figure-barHome img{
-   width:45px;
-   height:auto;
-   padding:5px;
-   margin:auto;
-}
 
 /*.....DROPDOWN-MENU......*/
 div.dropdown{
@@ -127,24 +113,48 @@ div.dropdown{
    flex-direction: column;
    width:100%;
    height:auto;
-   position:relative;
-   
+   position:relative;  
 }
+
+figure.barMenu{
+   max-width: max-content;
+   height:auto;
+   margin:auto;
+   padding:0;
+   z-index:1;   
+}
+
+img.bar-menu{
+   width:45px;
+   height:auto;
+   padding:0;
+   margin:0;
+}
+
 ul.dropdown-menu{
-   display: flex;
+   display:flex;
    flex-direction: column;
    align-items: center;
    position:absolute;
-   left:-270px;
-   top:50px;
+   transform:translateX(-270px);
    background: linear-gradient(45deg,#e66464e1, #5158c0e3, #d6e591de 60%, #5158c0e3);
    max-width: max-content;
-   height:auto;
    list-style: none;
    margin:0;
-   padding:20px 30px;
+   padding:20px 30px 70px;
    z-index: 1;
    gap:1em;
+   height: 0;
+   opacity:0;
+   visibility: hidden;
+   transition: height 0.6s ease, visibility 0.6s ease, opacity 0.6s;
+}
+
+/*.....EFEITO DROPDOWN...*/
+ul.dropdown-menu.active{
+   opacity:1;
+   height:max-content;
+   visibility: visible;
 }
 li{
    display:flex;
@@ -154,7 +164,6 @@ li{
    padding:0;     
    font-size: clamp(1em, 1.1em + 1vw, 1.5vw);
    color:#fff;
-   
 }
 
 a.dropdown-item{
@@ -168,9 +177,13 @@ a.dropdown-item{
    height:auto;
    margin:0 40px;
    padding:10px; 
-   background-color: darkgoldenrod;
+   background-color: rgba(184, 135, 11, 0.788);
    border-radius: 5px;
 }
+span.simbol{
+   margin-right:10px;
+}
+
 /*....TEXTO PROCEDIMENTOS EMERGENCIAIS....*/
 
 div#procedimentos{ 
@@ -186,6 +199,7 @@ div#procedimentos{
    background-color: #d8bfd091;
    box-shadow: 1px -11px 20px -2px rgba(170, 124, 124, 0.71);
 }
+
 p.cruz{
    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
    font-weight:bold; 
@@ -222,6 +236,7 @@ a.links_procedimentos{
    text-decoration:none;
    cursor:pointer;
 }
+
 .texto_links{
    font-size:clamp(1.3rem, 1em + 1vw, 2vw);
    max-width: 100%;
@@ -279,6 +294,7 @@ div.container-links{
    color:#fff;
    background-color: yellow;
 }
+
 h3.text-imc{
    display:flex;
    align-items: center;
@@ -287,7 +303,6 @@ h3.text-imc{
    margin:0 auto;
    padding:0;
    background-color: #350606;
-
 }
 
 figure.heart_imc{
@@ -308,6 +323,7 @@ img.heart-calculadora{
    margin:0;
    padding:0;
 }
+
 /*.....DESMAIOS.....*/
 .figure-desmaio img{
    width:60px;
@@ -332,6 +348,7 @@ img.heart-calculadora{
    padding:0;
    margin:0;
 }
+
 /*.....FRATURAS imagem.....*/
 .figure-fratura img{
    width:50px;
@@ -348,7 +365,6 @@ img.heart-calculadora{
    margin:0;
 }
 
-
 /*..........FOOTER...........*/
 #container-footer{
    display:flex;
@@ -362,6 +378,7 @@ img.heart-calculadora{
    border-top:1px solid #350606;   
    background: linear-gradient(#d8cccc9c, #ff9e9e99);
 }
+
 .figure-footer{ 
    display:flex;
    flex-direction: row;  
@@ -373,6 +390,7 @@ img.heart-calculadora{
    padding:5px;
    box-shadow: 1px 1px 3px #7b7a7a;  
 }
+
 .figure-footer img{
    width:40px;
    height:auto;
