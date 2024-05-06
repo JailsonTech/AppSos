@@ -30,12 +30,18 @@
         </div>
         <div class="container-altura">
             <label for="height" class="label_altura" >Altura</label><br>
-            <input  type="number" class="input_altura" id="height" name="altura" placeholder="Digite a altura" required autocomplete="off" >
+            <input  type="number" class="input_altura" id="height" name="altura" placeholder="Digite a altura" required autocomplete="off">
         </div>
-        <div>
-          <button type="submit" class="button_imc" onclick="calcularIMC()">Calcular</button>
-            </div>        
+        <div class="container-buttons">
+          <button type="button" class="button_imc button_calcular" onclick="calcularIMC()">Calcular</button>            
+          <button type="button" class="button_imc button_limpar" onclick="limparCampos()">Limpar</button>
+        </div>         
     </form>
+    <!--.....SAÍDA RESULTADO IMC......-->
+    <div class="containerSaidaResultado">
+        <h3 id="saida1"></h3>
+        <p id="saida2"></p>
+    </div>
     
 </section>
 </body>
