@@ -41,10 +41,10 @@
                   <img class="dropdown-toggle bar-menu" src="/images/bar_menu.png" alt="barra de menu">
                </figure>               
                   <ul class="dropdown-menu" id="dropdown-trigger">
-                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
-                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
-                     <a class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
-                     <a class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
+                     <a th:href="@{/home}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
+                     <a th:href="@{/login}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
+                     <a th:href="@{/cadastro}" class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
+                     <a th:href="@{/lista}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
                   </ul>
             </nav>
          </div>
@@ -153,21 +153,24 @@
          </a>
       -->
 
-        <!--..........FOOTER.................-->
+       <!--..........FOOTER in geral.css.................-->
       <footer id="container-footer">
 
-         <figure class="figure-footer casa">
-            <img src="/images/house-solid.png" alt="casa">
+         <a class="house-link" th:href="@{/lista}">
+            <figure class="figure-footer casa">
+            <img class="person" src="/images/user_gear_black.png" alt="ícon person/ ícone de uma pessoa">
          </figure>
-
-         <figure class="figure-footer ambulancia">
-            <img src="/images/ambulancia.png" alt="ambulância">
-         </figure>
-
-         <figure class="figure-footer opcoes">
-            <img src="/images/escolha.png" alt="casa">
-         </figure>
-
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer ambulancia">
+               <img src="/images/ambulancia.png" alt="ambulância">
+            </figure>
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer opcoes">
+               <img src="/images/escolha.png" alt="casa">
+            </figure>
+         </a>
       </footer>
    </section>
 

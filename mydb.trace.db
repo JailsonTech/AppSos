@@ -832,3 +832,15 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/AppSos/mydb.m
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 64 more
+2024-05-06 03:10:31.026732-03:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "SENHA CHARACTER VARYING(5)": "'12121212' (8)"; SQL statement:
+insert into tb_users (email,nome,senha,id) values (?,?,?,default) [22001-224]
+2024-05-06 03:11:08.631587-03:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "SENHA CHARACTER VARYING(5)": "'12121212' (8)"; SQL statement:
+insert into tb_users (email,nome,senha,id) values (?,?,?,default) [22001-224]
+2024-05-06 03:13:55.373336-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "SENHA CHARACTER VARYING(5)": "'12121212' (8)"; SQL statement:
+insert into tb_users (email,nome,senha,id) values (?,?,?,default) [22001-224]
+2024-05-06 03:15:03.571900-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "SENHA CHARACTER VARYING(5)": "'111111111' (9)"; SQL statement:
+insert into tb_users (email,nome,senha,id) values (?,?,?,default) [22001-224]

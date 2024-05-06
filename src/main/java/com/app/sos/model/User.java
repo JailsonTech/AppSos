@@ -25,7 +25,7 @@ public class User {
     private String email;
 
     @Column(name="senha", length=5, nullable = false)
-    @Pattern(regexp = "^(?=.*[0-9])(?=\\S+$).{5,}$", message = "Senha deve conter apenas 5 números.")
+    @Pattern(regexp = "^[0-9]{5}$", message = "A senha deve conter exatamente 5 números.")
     @NotBlank(message="A senha não pode ser em branco")
     private String senha;
 
@@ -48,4 +48,5 @@ public class User {
     public String getSenha() { return senha; }
 
     public void setSenha(String senha) { this.senha = senha; }
+
 }

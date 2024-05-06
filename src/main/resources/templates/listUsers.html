@@ -5,41 +5,71 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>List Users</title>
    <link rel="stylesheet" th:href="@{/css/listUsers.css}">
+   <link rel="stylesheet" th:href="@{/css/geral.css}">
+   <script th:src="@{/script/cadastro.js}"></script>
 </head>
 <body>
 
 <section class="container-listUsers">
-   <div class="container-goback">    
-      <a th:href="@{/cadastro}" class="goback">      
-         <h4 class="back">&#10913; Cadastro</h4>
-      </a>
-      <a th:href="@{/home}" class="goback"> 
-         <h4 class="back">&#10913; Home</h4>
-      </a>
-   </div>
 
-  
-   <h3>LISTA DE USUÁRIOS</h3>
-   <table class="listaUsers">
-      <div th:if="${listUsers.empty}" class="aviso">
-         <figure class="container_folder">
-            <img class="folder_empty" src="/images/folder_empty.png">
+  <div class="header-list">
+   <h3 class="title-list">LISTA DE USUÁRIOS</h3>
+    <nav class="dropdown">
+               <figure class="barMenu" id="bar-trigger">
+                  <img class="dropdown-toggle bar-menu" src="/images/bar_menu_blue.png" alt="barra de menu">
+               </figure>               
+                  <ul class="dropdown-menu" id="dropdown-trigger">
+                     <a th:href="@{/home}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
+                     <a th:href="@{/login}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
+                     <a th:href="@{/cadastro}" class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
+                     <a th:href="@{/lista}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
+                  </ul>
+            </nav>
+
+  </div>
+  <!--...ALERTA CADASTRE USUÁRIO.......-->.
+  <div class="aviso" th:if="${listUsers.empty}">
+            <figure class="container_folder">
+               <img class="folder_empty" src="/images/folder_empty.png">
+            </figure>
+            <p class="alerta_cadastre"> Cadastre um usuário!</p>
+         </div>  
+   <!--......TABELA USUÁRIOS..........-->
+   <div class="container-table">
+      <table class="tableUsers">          
+         <tr class="tr-cabecalho">
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+         </tr>            
+         <tr th:each = "users:${listUsers}">
+            <td th:text="${users.id}" class="td-list td-id"></td>
+            <td th:text="${users.nome}" class="td-list td-nome"></td>
+            <td th:text="${users.email}" class="td-list td-email"></td>
+            <td th:text="${users.senha}" class="td-list td-senha"></td>
+         </tr>
+      </table>
+   </div>
+   <!--..........FOOTER in geral.css.................-->
+      <footer id="container-footer">
+
+         <a class="house-link" th:href="@{/home}">
+            <figure class="figure-footer casa">
+            <img src="/images/house-solid.png" alt="casa">
          </figure>
-         <p class="alerta_cadastre"> Cadastre um usuário!</p>
-      </div>   
-      <tr class="tr-cabecalho">
-         <th>Id</th>
-         <th>Nome</th>
-         <th>Email</th>
-         <th>Senha</th>
-      </tr>            
-      <tr th:each = "users:${listUsers}">
-         <td th:text="${users.id}" class="td-list td-id"></td>
-         <td th:text="${users.nome}" class="td-list td-id"></td>
-         <td th:text="${users.email}" class="td-list td-id"></td>
-         <td th:text="${users.senha}" class="td-list td-id"></td>
-      </tr>
-   </table>
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer ambulancia">
+               <img src="/images/ambulancia.png" alt="ambulância">
+            </figure>
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer opcoes">
+               <img src="/images/escolha.png" alt="casa">
+            </figure>
+         </a>
+      </footer>
 </section>
 </body>
 </html>
