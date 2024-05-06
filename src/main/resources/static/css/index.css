@@ -1,5 +1,5 @@
   
-   div.container-index{
+   section.container-index{
    background: linear-gradient(to bottom, #ffff00 0%, #ff99cc 100%);  
    padding:0;
    margin:0 auto;
@@ -35,10 +35,10 @@
    font-size: clamp(1.3em, 2em + 1.1vw, 2vw);   
    box-sizing: border-box;
   }
-
-   div.container-botoes{
+/*.......BUTTON LOGIN......*/
+   div.container-button{
    padding:0;
-   margin:2em auto;
+   margin:2em auto 10px;
    max-width:100%;
    height:100%;     
    display:flex;
@@ -48,44 +48,76 @@
    align-content: center;
    box-sizing: border-box;  
    }
+   
+   a.link-login{
+      display:flex;
+      align-items: center;
+      margin:0 auto;
+      padding:0;
+      text-decoration: none;
+      cursor: pointer;
+   }
 
-   button.btn_1-entrar{
+   button.btn-login{
    max-width: 100%;
    height:auto;
    padding:5px 15px;
    margin:0 auto;
-   background-color: #4D440A;
+   background-color: #3f3703;
    color:#fff;
-   box-shadow:1px 1px 3px #000999;
+   box-shadow:1px 1px 3px #030411;
    font-size: clamp(1em, .5em + 10px, 5vw);
-   cursor:pointer;
    display:flex;
    align-items: center;
    align-content: center;
    box-sizing: border-box;
    border-radius:5px;
+   cursor: pointer;
    }
 
-   button.btn_1-entrar:hover{
-      background-color: #000999;
+   button.btn-login:hover{
+      background-color: #3a4603;
    }
 
- p.cadastre{
+/*........LINK CADASTRE-SE......*/
+div.container-cadastre{
+   max-width: content;
+   display:flex;
+   margin:0 auto;
+   padding:0;
+   }
+
+   a.link-cadastre{
+   text-decoration: none;
+   display:flex;
+   cursor: pointer;
+   margin:0;
+   padding:0;
+   width:max-content;
+   height:auto;
+   }
+
+   a.link-cadastre:hover{
+   color:#06585e;
+   }
+
+   a.link-cadastre:active{
+   transform:scale(.97);
+   }
+
+ p.text-cadastre{
    width: max-content;
    height:auto;
    padding:0;
    margin: 0 auto;
-   font-size: clamp(1.2em, 1.2em + 1vw, 2vw);
+   font-size: clamp(1em, 1em + .5vw, 2vw);
    cursor:pointer;
    display:flex;
    align-items: center;
    align-content: center;  
    }
 
-   p.cadastre:hover{
-      color:#00fff2;
-      text-shadow: 1px 1px 5px #303030;
-   }
+
 
    div.container-textInformativo{      
       margin:0;
@@ -99,13 +131,13 @@
       display:block;
       margin:1em auto 2em;
       padding:0 20px;
-      font-size: clamp(1em, .8em + 1vw, 3vw);
+      font-size: clamp(1em, .5em + .5vw, 3vw);
       box-sizing: border-box;
       color:#4e3333; 
       text-align: center;
       word-wrap:break-word;
    }
    .text_index-informativo span{
-      font-size: clamp(1.1em, 1em + 1vw, 2vw);
+      font-size: clamp(1em, 1em + .6vw, 2vw);
       color:#270e0e; 
    }

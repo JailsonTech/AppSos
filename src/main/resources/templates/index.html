@@ -12,7 +12,7 @@
 
 <body class="body_index">
 
-    <div class="container-index">
+    <section class="container-index">
         
         <figure class="heart_index">
            <img class="heart-index" src="/images/heart.png">
@@ -20,12 +20,16 @@
     
         <h1 class="title-index">PRIMEIROS<br>SOCORROS</h1>
     
-        <div class="container-botoes">
-            <a th:href="@{/login}"  class="links-pag">
-                <button class="btn_1-entrar" >Login</button>
+        <!--........BUTTON LOGIN......-->
+        <div class="container-button">
+            <a  class="link-login" th:href="@{/login}" >
+                <button class="btn-login" >Login</button>
             </a>
-            <a th:href="@{/cadastro}" class="links-pag">
-                <p class="cadastre">Cadastre-se</p>
+        </div>
+        <!--........LINK CADASTRE-SE......-->
+        <div class="container-cadastre">
+            <a class="link-cadastre" th:href="@{/cadastro}">
+                <p class="text-cadastre">Cadastre-se</p>
             </a>
         </div>
     
@@ -34,6 +38,6 @@
                 <span>Bem-vindos</span><br>Em casos de emergência saiba como proceder usando este app
             </p>
         </div>
-    </div>
+    </section>
 </body>
 </html>

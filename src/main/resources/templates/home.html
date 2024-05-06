@@ -18,48 +18,39 @@
       <div class="coloredStrip">
       </div>
 
-         <!--...container geral cabeçalho....-->
+         <!--...CABEÇALHO....-->
       <header class="container-header">
+         <figure class="figure-heartHome">
+            <img class="heart-header" src="/images/heart.png">
+         </figure>
 
-         <!--container header primeiros socorros-->
-
-         <div class="divHeader">
-
-            <figure class="figure-heartHome">
-               <img src="/images/heart.png">
-            </figure>
-
-            <div class="container-textHeader">
-
-               <h3 class="textCruz">+</h3>
-
-               <h2 class="text-header">PRIMEIROS<br>SOCORROS</h2>
-            </div>
-            <!--.......DROPDOWN-MENU.........-->
-            <nav class="dropdown">
-               <figure class="barMenu" id="bar-trigger">
-                  <img class="dropdown-toggle bar-menu" src="/images/bar_menu.png" alt="barra de menu">
-               </figure>               
-                  <ul class="dropdown-menu" id="dropdown-trigger">
-                     <a th:href="@{/home}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
-                     <a th:href="@{/login}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
-                     <a th:href="@{/cadastro}" class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
-                     <a th:href="@{/lista}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
-                  </ul>
-            </nav>
+         <div class="container-textHeader">
+            <h3 class="textCruz">+</h3>
+            <h2 class="text-primeirosSocorros">PRIMEIROS<br>SOCORROS</h2>
          </div>
+
+         <!--.......DROPDOWN-MENU.........-->
+         <nav class="dropdown">
+            <figure class="barMenu" id="bar-trigger">
+               <img class="dropdown-toggle bar-menu" src="/images/bar_menu.png" alt="barra de menu">
+            </figure>               
+            <ul class="dropdown-menu" id="dropdown-trigger">
+               <a th:href="@{/home}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
+               <a th:href="@{/login}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
+               <a th:href="@{/cadastro}" class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
+               <a th:href="@{/lista}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
+            </ul>
+         </nav>
       </header>      
 
       <!--.........CALCULADORA IMC.........................................-->
-       <a href="/imc" class="links_procedimentos">
+       
          <div class="container-imc">
+            <a class="link-calcule" href="/imc" >
             <h3 class="text-imc">Calcule seu IMC</h3>
-            <figure class="heart_imc">
-               <img class="heart-calculadora" src="/images/heart.png" alt="heart">
-            </figure>
-
+            </a>            
          </div>         
-      </a>
+      
       
       <!--PROCEDIMENTOS EMERGENCIAIS-->
       <div id="procedimentos">

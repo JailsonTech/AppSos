@@ -1,6 +1,6 @@
 
 // Limpa a mensagem após 6 segundos
-    const tymeOut = setTimeout(limparCampos, 4000);
+    const tymeOut = setTimeout(limparCampos, 6000);
 
 function limparCampos() {
     // Limpa o valor dos campos do formulário

@@ -1,19 +1,45 @@
-.reply_login img{
-   width:clamp(2em, 3em + 1vw, 3vw);
-   height:auto;
-   margin:0;
-   position:absolute;
-   top:0;
-   left:3%;
 
-}   
-a.links-pag{
-   display:block;
-   max-width:max-content;
+/*.....ARROW - SAIR......login/cadastro.....*/
+a.arrow_link{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   width:max-content;
    height:auto;
    text-decoration:none;
    cursor:pointer;
+   margin:0; 
+   padding:0; 
+   top:0;
+   left:3%;
+   position:absolute;
+   
 }
+
+figure.arrowLeft{
+   margin:0;
+   padding:0;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+}
+img.arrow{
+   width:clamp(2em, 3em + 1vw, 3vw);
+   height:auto;
+ 
+
+}   
+figcaption.text-sair{
+   color:#34ffdd;
+   margin:0 auto;
+   padding:0;
+   text-align: center;   
+}
+
+figcaption.text-sair:hover{
+  color:#ffed4e;
+}
+
 
  /*.....LINK PARA listUsers......LOGIN E CADASTRO*/
 p.container-listUsers{
@@ -48,7 +74,8 @@ color:#a7ffbfda;
 text-shadow: 1px 1px 5px  #222;
 }
 
-/*....BOTÃO SUBMIT - Login / Cadastro....*/
+/*....BOTÃO SUBMIT -> Login / Cadastro....*/
+
 button.btn-submit{
 width:max-content;
 height:auto;
@@ -61,6 +88,16 @@ box-shadow:1px 1px 3px #000000;
 color:#2b0b0b;
 font-size: clamp(1.1em, 1em + .8vw, 1.4vw);
 }
+button.btn-submit:hover{
+box-shadow:-1px -1px -3px #140224;
+color:#06585e;
+cursor: pointer;
+}
+button.btn-submit:active{
+box-shadow:1px 1px 3px #000000;
+transform:scale(.97);
+}
+
 
 /*..........FOOTER - home/listUsers...........*/
 #container-footer{
@@ -75,6 +112,7 @@ font-size: clamp(1.1em, 1em + .8vw, 1.4vw);
    border-top:1px solid #350606;   
    background: linear-gradient(#d8cccc9c, #ff9e9e99);
 }
+
 
 a.house-link{
    display:block;

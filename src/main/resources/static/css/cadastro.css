@@ -101,11 +101,14 @@ text-shadow: 2px 2px 5px #000;
 
 /*......MENSAGEM DE ERRO.....*/
 p.message{
-color:red;
-text-align:justify;
-padding:0;
-max-width:100%;
+color:#810000;
+text-align:center;
+padding:3px 5px;
+max-width:max-content;
 height:auto;
+background-color: rgb(255, 234, 112);
+margin:5px auto 0;
+
 }
 
   
