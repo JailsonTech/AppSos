@@ -1,109 +1,143 @@
-.body_index{
-   padding:20px 10px;
+  
+   section.container-index{
    background: linear-gradient(to bottom, #ffff00 0%, #ff99cc 100%);  
-   min-height: 100vh; 
-   margin:auto;   
-   }
-
-   div.container-index{
    padding:0;
-   margin:auto;
-   max-width:100%;
-   height:100%;
+   margin:0 auto;
+   width:min-content;
+   height:auto;
    display:flex;
    flex-direction: column;
-   gap:3em;
    align-items: center;
    align-content: center;
-   box-sizing: border-box; 
    }
 
    figure.heart_index{
-      max-width:100%;
+      width:clamp(350px, 440px + 2vw, 15vw);
       height:auto;
-      margin:4em auto 0;
+      margin:1.2em auto 0;
+      padding:0;
+      text-align: center;
    }
    
-   figure.heart_index img{
-      width:170px;
+   img.heart-index{
+      max-width:clamp(100px, 45px + 5vw, 35vw);
       height:auto;
+      margin:0;
       padding:0;
    }
    
-   h1.text-index{
-   margin:0;
+   h1.title-index{
+   margin:1em auto 0;
    padding:0;
    width:max-content;
    height:max-content;
    color:fff;
-   font-size: clamp(2em, 1.3em + 1.5vw, 3vw);   
+   font-size: clamp(1.3em, 2em + 1.1vw, 2vw);   
    box-sizing: border-box;
   }
-
-   div.container-botoes{
+/*.......BUTTON LOGIN......*/
+   div.container-button{
    padding:0;
-   margin:auto;
+   margin:2em auto 10px;
    max-width:100%;
    height:100%;     
    display:flex;
-   gap:3.5em;
+   gap:1em;
    flex-direction:column;
    align-items: center;
    align-content: center;
    box-sizing: border-box;  
    }
+   
+   a.link-login{
+      display:flex;
+      align-items: center;
+      margin:0 auto;
+      padding:0;
+      text-decoration: none;
+      cursor: pointer;
+   }
 
-   button.btn_1-entrar{
+   button.btn-login{
    max-width: 100%;
    height:auto;
    padding:5px 15px;
-   margin:auto;
-   background-color: #4D440A;
+   margin:0 auto;
+   background-color: #3f3703;
    color:#fff;
-   box-shadow:1px 1px 3px #000999;
-   font-size: clamp(1.7em, 1.4em + 2vw, 1.2vw);
-   cursor:pointer;
+   box-shadow:1px 1px 3px #030411;
+   font-size: clamp(1em, .5em + 10px, 5vw);
    display:flex;
    align-items: center;
    align-content: center;
    box-sizing: border-box;
+   border-radius:5px;
+   cursor: pointer;
    }
 
-   button.btn_2-cadastre{
-   max-width: 100%;
+   button.btn-login:hover{
+      background-color: #3a4603;
+   }
+
+/*........LINK CADASTRE-SE......*/
+div.container-cadastre{
+   max-width: content;
+   display:flex;
+   margin:0 auto;
+   padding:0;
+   }
+
+   a.link-cadastre{
+   text-decoration: none;
+   display:flex;
+   cursor: pointer;
+   margin:0;
+   padding:0;
+   width:max-content;
    height:auto;
-   padding:5px 10px;
-   margin:auto;
-   background-color: transparent;
-   border-radius:2px #000222;
-   box-shadow:1px 1px 3px #000999;
-   color:#000;
-   font-size: clamp(1.5em, 1.4em + 2vw, 1.2vw);
+   }
+
+   a.link-cadastre:hover{
+   color:#06585e;
+   }
+
+   a.link-cadastre:active{
+   transform:scale(.97);
+   }
+
+ p.text-cadastre{
+   width: max-content;
+   height:auto;
+   padding:0;
+   margin: 0 auto;
+   font-size: clamp(1em, 1em + .5vw, 2vw);
    cursor:pointer;
    display:flex;
    align-items: center;
    align-content: center;  
-   box-sizing: border-box; 
    }
+
+
 
    div.container-textInformativo{      
       margin:0;
       padding:0;
-      width:100%;
+      max-width:100%;
       height:auto;
    }
-
    p.text_index-informativo{
-      max-width: 100%;
+      width: content;
       height:auto;
       display:block;
-      text-align: center;
-      margin:2em auto;
+      margin:1em auto 2em;
       padding:0 20px;
-      font-size: clamp(1.2em, 1.3em + 1vw, 2vw); 
+      font-size: clamp(1em, .5em + .5vw, 3vw);
       box-sizing: border-box;
+      color:#4e3333; 
+      text-align: center;
+      word-wrap:break-word;
    }
-
-  .text_index-informativo span{
-      font-size: clamp(1.3em, 1.3em + 1vw, 2vw); 
+   .text_index-informativo span{
+      font-size: clamp(1em, 1em + .6vw, 2vw);
+      color:#270e0e; 
    }

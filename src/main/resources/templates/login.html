@@ -7,14 +7,12 @@
     <link rel="stylesheet" th:href="@{/css/login.css}" />
     <link rel="stylesheet" th:href="@{/css/geral.css}" />
   </head>
-
-  <body class="body_login">
-
-    <section class="containerGeral-login">
-
-    <a th:href="@{/}" class="links-pag">
-        <figure class="reply_login">
-            <img src="/images/reply_black_24dp.png">
+<body class="body_login">
+<section class="containerGeral-login">
+    <a th:href="@{/}" class="arrow_link">
+        <figure class="arrowLeft">
+            <img class="arrow" src="/images/reply_black_24dp.png" alt="seta para esquerda (left arrow)">
+            <figcaption class="text-sair">sair</figcaption>
         </figure>
     </a>
 
@@ -24,7 +22,7 @@
 
     <h2 class="text-login">LOGIN</h2>
 
-    <div class="container-form-login">
+        <div class="container-form-login">
         <form class="form-login">
             <div class="container-email">
                 <label for="email" class="label-login label-email">Email</label><br>
@@ -45,5 +43,5 @@
         </p>
     </div>
 </section>
-  </body>
+</body>
 </html>

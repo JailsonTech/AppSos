@@ -15,17 +15,17 @@ public class User {
     @Column(name="nome", length=100, nullable = false)
     @NotBlank(message = "O nome é obrigatório")
     @Size(min=4, message="Mínimo de 4 letras exigido")
-    @Pattern(regexp = "^[\\p{L} .'-]+$", message = "Nome inválido, evite números ou caracteres.")
+    @Pattern(regexp = "^[\\p{L} .'-]+$", message = "Inválido, evite números ou caracteres.")
     private String nome;
 
     @Column(name="email", length=180, nullable = false)
     @Email(message = "O email deve ser válido")
     @NotBlank(message="O email é obrigatório")
-    @Pattern(regexp = ".*@(gmail\\.com|hotmail\\.com|outlook\\.com)$", message = "Insira um email do Gmail, Hotmail ou Outlook. exemplo abc@gmail.com")
+    @Pattern(regexp = ".*@(gmail\\.com|hotmail\\.com|outlook\\.com)$", message = "exemplo: abc@gmail.com / abc@hotmail.com etc...")
     private String email;
 
     @Column(name="senha", length=5, nullable = false)
-    @Pattern(regexp = "^(?=.*[0-9])(?=\\S+$).{5,}$", message = "Senha deve conter apenas 5 números.")
+    @Pattern(regexp = "^[0-9]{5}$", message = "Máx 5 números aleatórios.")
     @NotBlank(message="A senha não pode ser em branco")
     private String senha;
 
@@ -48,4 +48,5 @@ public class User {
     public String getSenha() { return senha; }
 
     public void setSenha(String senha) { this.senha = senha; }
+
 }

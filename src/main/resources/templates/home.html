@@ -7,6 +7,7 @@
       <meta name="author" content="Jailson Rodrigues"/>
       <link rel="stylesheet" th:href="@{/css/home.css}">
       <link rel="stylesheet" th:href="@{/css/geral.css}">
+      <script th:src="@{/script/cadastro.js}"></script>
    </head>
 
 <body class="body_home">
@@ -17,48 +18,40 @@
       <div class="coloredStrip">
       </div>
 
-         <!--...container geral cabeçalho....-->
+         <!--...CABEÇALHO....-->
       <header class="container-header">
+         <figure class="figure-heartHome">
+            <img class="heart-header" src="/images/heart.png">
+         </figure>
 
-         <!--container header primeiros socorros-->
-
-         <div class="divHeader">
-
-            <figure class="figure-heartHome">
-               <img src="/images/heart.png">
-            </figure>
-
-            <div class="container-textHeader">
-
-               <h3 class="textCruz">+</h3>
-
-               <h2 class="text-header">PRIMEIROS<br>SOCORROS</h2>
-            </div>
-            <!--.......DROPDOWN-MENU.........-->
-            <div class="dropdown">
-               <figure class="figure-barHome">
-                  <img class="dropdown-toggle bar-home" src="/images/bars-solid.png" alt="barra de menu">
-               </figure>               
-                  <ul class="dropdown-menu">
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Home</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Login</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Cadastro</li></a>
-                     <a class="dropdown-item" href="#"><li><span>&#10913;</span> Lista Usuários</li></a>
-                  </ul>
-            </div>
+         <div class="container-textHeader">
+            <h3 class="textCruz">+</h3>
+            <h2 class="text-primeirosSocorros">PRIMEIROS<br>SOCORROS</h2>
          </div>
+
+         <!--.......DROPDOWN-MENU.........-->
+         <nav class="dropdown">
+            <figure class="barMenu" id="bar-trigger">
+               <img class="dropdown-toggle bar-menu" src="/images/bar_menu.png" alt="barra de menu">
+            </figure>               
+            <ul class="dropdown-menu" id="dropdown-trigger">
+               <a th:href="@{/home}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Home</li></a>
+               <a th:href="@{/login}" class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Login</li></a>
+               <a th:href="@{/cadastro}" class="dropdown-item" href="#"><li ><span class="simbol">&#10913;</span>Cadastro</li></a>
+               <a th:href="@{/lista}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Lista Usuários</li></a>
+               <a th:href="@{/imc}"  class="dropdown-item" href="#"><li><span class="simbol">&#10913;</span>Cálculo Imc</li></a>
+            </ul>
+         </nav>
       </header>      
 
       <!--.........CALCULADORA IMC.........................................-->
-       <a href="/imc" class="links_procedimentos">
+       
          <div class="container-imc">
+            <a class="link-calcule" href="/imc" >
             <h3 class="text-imc">Calcule seu IMC</h3>
-            <figure class="heart_imc">
-               <img class="heart-calculadora" src="/images/heart.png" alt="heart">
-            </figure>
-
+            </a>            
          </div>         
-      </a>
+      
       
       <!--PROCEDIMENTOS EMERGENCIAIS-->
       <div id="procedimentos">
@@ -152,21 +145,24 @@
          </a>
       -->
 
-        <!--..........FOOTER.................-->
+       <!--..........FOOTER in geral.css.................-->
       <footer id="container-footer">
 
-         <figure class="figure-footer casa">
-            <img src="/images/house-solid.png" alt="casa">
+         <a class="house-link" th:href="@{/lista}">
+            <figure class="figure-footer casa">
+            <img class="person" src="/images/user_gear_black.png" alt="ícon person/ ícone de uma pessoa">
          </figure>
-
-         <figure class="figure-footer ambulancia">
-            <img src="/images/ambulancia.png" alt="ambulância">
-         </figure>
-
-         <figure class="figure-footer opcoes">
-            <img src="/images/escolha.png" alt="casa">
-         </figure>
-
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer ambulancia">
+               <img src="/images/ambulancia.png" alt="ambulância">
+            </figure>
+         </a>
+         <a class="house-link" href="#">
+            <figure class="figure-footer opcoes">
+               <img src="/images/escolha.png" alt="casa">
+            </figure>
+         </a>
       </footer>
    </section>
 
