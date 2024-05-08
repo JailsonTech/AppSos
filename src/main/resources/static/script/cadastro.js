@@ -1,6 +1,6 @@
 
 // Limpa a mensagem após 6 segundos
-    const tymeOut = setTimeout(limparCampos, 6000);
+    const tymeOut = setTimeout(limparCampos, 3000);
 
 function limparCampos() {
     // Limpa o valor dos campos do formulário
@@ -8,7 +8,6 @@ function limparCampos() {
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
-
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -28,3 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
         event.stopPropagation();
     });
 });
+
+// Função para fechar o dropdown ao sair da página
+function fecharDropdown() {
+    // Recolher o dropdown
+    var dropdown = document.getElementById('dropdown-trigger');
+    dropdown.style.display = 'none';
+}
+
+// Adiciona um ouvinte de evento que escuta quando o usuário está saindo da página
+window.addEventListener('beforeunload', fecharDropdown);
