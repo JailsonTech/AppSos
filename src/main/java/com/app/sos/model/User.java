@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "tb_users")
 public class User {
    @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
 
    @Column(name = "nome", length = 100, nullable = false)

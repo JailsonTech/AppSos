@@ -1,22 +1,21 @@
 .body_cadastro{
-background-color:#d9DF89;
-padding:20px 0;
-
+   background-color:#d9DF89;
+   padding:20px 0;
 }
 
 section.containerGeral-cadastro{
-display:flex;
-flex-direction: column;
-align-items: center;
-align-content: center;
-max-width: min-content;
-max-height:80%;
-margin:auto;
-padding:10px;
-border:solid 1px #4d4b4b;
-box-shadow: 1px 1px 3px #515152;
-background-image:linear-gradient(45deg,  #3ee4fae5, #070747a6 40%, #070747a6, #3ee4fae5);
-position:relative;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   align-content: center;
+   max-width: min-content;
+   max-height:80%;
+   margin:auto;
+   padding:10px;
+   border:solid 1px #4d4b4b;
+   box-shadow: 1px 1px 3px #515152;
+   background-image:linear-gradient(45deg,  #3ee4fae5, #070747a6 40%, #070747a6, #3ee4fae5);
+   position:relative;
 }
 
 figure.heart_cadastro{
@@ -36,57 +35,65 @@ figure.heart_cadastro img{
 }
 
 h2.text-cadastro{
+   color:#a0fafd;
    width:100%;
    height:auto;
    text-align:center;
    margin:1em auto 0;
    padding:10px 0;
-   background-color:#f9ddb6;
+   background-color:#02222ee0;
 }
 
+/*......CONTAINER FORMULÁRIO.......*/
 div.container_cadastro{
-padding:10px;
-margin:1em auto 0;
-max-width:100%;
-height:500px;
-border-radius:5px solid #000000;
-
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding:10px;
+   margin:1em auto 0;
+   max-width:100%;
+   height:auto;
+   border-radius:5px solid #000000;
+   position:relative;
 }
 
 /*....MENSAGEM DE SUCESSO......*/
 .alert{
-display:flex;
-flex-direction:column;
-align-content:center;
-align-items:center;
-text-align:center;
-max-width:100%;
-height:auto;
-margin:auto;
-padding:0;
-font-size:1.2em;
-background-color:#a0fafd;
+   display:block;
+   text-align:center;
+   width:85%;
+   height:auto;
+   margin:0;
+   padding:0;
+   box-shadow: 1px 1px 3px #000;
+   font-size:1.2em;
+   background-color:#a7fcff;
+   position:absolute;
+   top:10px;
+   border:1px dashed #8100dd;
 }
 
+/*....FORMULÁRIO DE CADASTRO.....*/
 .form_cadastro{
-padding:15px 0;
-margin:auto;
-max-width:100%;
-height:auto;
-border-radius:5px solid #000000;
-display:flex;
-flex-direction:column;
-align-items: center;
-align-content: center;
-gap:15px;
+   padding:15px 0;
+   margin:auto;
+   max-width:100%;
+   height:auto;
+   border-radius:5px solid #000000;
+   display:flex;
+   flex-direction:column;
+   align-items: center;
+   align-content: center;
+   gap:15px;
 }
 
 .label_cadastro{
-font-size: clamp(1.2em, 18px + 1vw, 1.2vw);
-width:max-content;
-height:auto;
-color:#fff;
-text-shadow: 2px 2px 5px #000;
+   font-size: clamp(1.2em, 18px + 1vw, 1.2vw);
+   width:max-content;
+   height:auto;
+   color:#fff;
+   text-shadow: 2px 2px 5px #000;
 }
 
 .input_cadastro{
@@ -96,19 +103,17 @@ text-shadow: 2px 2px 5px #000;
    padding:10px 5px;
    box-shadow:1px 1px 3px 3px #490949a4;  
    border:none;
-
 }
 
 /*......MENSAGEM DE ERRO.....*/
 p.message{
-color:#810000;
-text-align:center;
-padding:3px 5px;
-max-width:max-content;
-height:auto;
-background-color: rgb(255, 234, 112);
-margin:5px auto 0;
-
+   color:#810000;
+   text-align:center;
+   padding:3px 5px;
+   max-width:max-content;
+   height:auto;
+   background-color: rgb(255, 234, 112);
+   margin:5px auto 0;
 }
 
   

@@ -62,10 +62,10 @@ public class UserController {
    public String salvarUser(Model model, @ModelAttribute("newUser") @Valid User user, BindingResult erros, RedirectAttributes attributes) {
 
       if (erros.hasErrors()) {
+          
          return "/cadastro";
       }
       model.addAttribute("mensagem", "Cadastro realizado!"); //...Mensagem de sucesso no cadastro.html
-
       userService.criarUser(user);
       return "/cadastro";
    }
@@ -73,9 +73,9 @@ public class UserController {
    //........RETORNO DE DADOS.................
    @GetMapping("/lista")
    public String paglistUsers(Model model) {
-      List<User> users = userService.findAllUsers();
-      //... O objeto, "users", será¡ colocado na tabela html em th:each="users ${}" e em cada <td th:text="${users.id}"></td>
-      model.addAttribute("listUsers", users);
+      List<User> user = userService.findAllUsers();
+      //... O objeto, "users", será¡ colocado na tabela em "listUsers.html" em th:each="user ${}" e em cada <td th:text="${user.id}"></td>
+      model.addAttribute("listUsers", user);
       //... O atributo, "listUsers", será colocado na tabela html em ${listUsers}
 
       return "listUsers";
@@ -87,10 +87,35 @@ public class UserController {
       try {
          userService.apagaUser(id);
       } catch (
-            UserNotFoundException e) {
-         model.addAttribute("mensageError", e.getMessage());
+              UserNotFoundException e) {
+         model.addAttribute("messageError", e.getMessage());
       }
-      userService.resetIdSequence();
+      
+      return "redirect:/lista";
+   }
+
+   //...........EDITAR USUÁRIOS..............
+   @GetMapping("/editar/{id}")
+   public String editarForm(Model model, @PathVariable("id") long id, RedirectAttributes attributes) {
+      try { // abre a página de edição do banco de dados...editUsers.html
+         User user = userService.buscarIdUser(id);
+         model.addAttribute("editaUser", user);
+         return "/editUsers";
+      } catch (
+              UserNotFoundException e) {
+         model.addAttribute("messageError", e.getMessage());
+      }
+      return "redirect:/lista";
+   }
+
+   //........ENVIAR USUÁRIOS EDITADOS PARA O DB...........
+   @PostMapping("/editar/{id}")
+   public String editaUser(Model model, @PathVariable("id") long id, @ModelAttribute("editaUser") @Valid User user, BindingResult erros) {
+      if (erros.hasErrors()) {
+         return "/editar";
+      }
+
+      userService.editUser(user);
       return "redirect:/lista";
    }
 
