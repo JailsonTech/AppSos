@@ -37,11 +37,17 @@
             <button type="submit" class="btn-submit">ENTRAR</button>
         </form>
 
-        <!--...LINK PARA listUsers...-->
-        <p class="container-listUsers">
-            <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
-            <a th:href="@{/lista}"  class="link-users" >Usuários cadastrados</a>
-        </p>
+ <!--...LINK USERS CADASTRADOS -> geral.css...-->
+        <div class="container-linkUsersCadastrados">        
+        <figure class="container-listUsers">
+            <a th:href="@{/lista}" class="link-users link-person">
+                <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
+            </a>
+            <a th:href="@{/lista}" class="link-users">
+                <figcaption class="textFig">Lista de Usuários</figcaption>
+            </a>
+        </figure>        
+        </div>
     </div>
 </section>
 </body>

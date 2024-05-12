@@ -12,48 +12,50 @@
 
 <body>
 <section class="container_editarForm">
+   <a th:href="@{/lista}" class="arrow_link">
+        <figure class="arrowLeft">
+            <img class="arrow" src="/images/reply_black_24dp.png" alt="seta para esquerda (left arrow)">
+            <figcaption class="text-sair">voltar</figcaption>
+        </figure>
+    </a>
 
   <!--...FORMULÁRIO DE EDIÇÃO DE USUÁRIO....-->
 
-  <form class="form_edit" th:action="@{/editar/{id}(id=${editaUser.id})}" th:object="${editaUser}" method="post"
-        id="editId">
+  <form class="form_edit" th:action="@{/editar/{id}(id=${editaUser.id})}" th:object="${editaUser}" method="post" id="editId">
 
     <!--... LIMPAR CAMPOS -> função em "cadastro.js" ...-->
-    <div class=" container_cadastro-nome">
+    <div class="container-inputs container_nome">
       <label for="nome" class="editarNome label_cadastro-nome">Nome</label><br>
-      <input th:field="*{nome}" type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome"
+      <input th:field="*{nome}" type="text" class="input_edit editNome" id="nome" name="nome"
              placeholder="Digite seu primeiro nome"><br>
 
       <!-- MENSAGEM DE ERRO PARA NOME-->
-      <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="message">
+      <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="messagem">
         <!--...Aqui será lançado a mensagem de erro-->
       </p>
     </div>
 
-    <div class="containers_cadastro container_cadastro-email">
+    <div class="container-inputs container-email">
       <label for="email" class="editarNome label_cadastro-email">Email</label><br>
-      <input th:field="*{email}" type="email" class="input_cadastro input_cadastro-email" id="email" name="email"
+      <input th:field="*{email}" type="email" class="input_edit editEmail" id="email" name="email"
              placeholder="seu@email.com"><br>
 
       <!-- MENSAGEM DE ERRO PARA EMAIL-->
-      <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="message">
+      <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="messagem">
         <!--...Aqui será lançado a mensagem de erro-->
       </p>
     </div>
-    <div class="containers_cadastro container_cadastro-psw">
+    <div class="container-inputs container_senha">
       <label for="password" class="editarNome label_cadastro-psw">Password</label><br>
-      <input th:field="*{senha}" type="password" class="input_cadastro input_cadastro-password" id="password"
+      <input th:field="*{senha}" type="password" class="input_edit editSenha" id="password"
              name="senha"
              placeholder="Digite sua senha"><br>
 
       <!-- .....MENSAGEM DE ERRO PARA SENHA..... -->
-      <p class="message" th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}">
+      <p class="messagem" th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}">
         <!--...Aqui será lançado a mensagem de erro-->
       </p>
     </div>
-    <!--.....MENSAGEM NA LISTA DE USUÁRIOS - vinda do Controller...-->
-  <div th:if="${messageError}" class="alert_listUsers" id="alerta_listUsers">
-    <p th:text="${messageError}"></p>
   </div>
 
     <button type="submit" class="btn-submit" onclick="confirmarEdicao(event)">Enviar</button>

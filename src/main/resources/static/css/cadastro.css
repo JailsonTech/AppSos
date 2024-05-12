@@ -27,8 +27,8 @@ figure.heart_cadastro{
    align-content: center;
 }
 
-figure.heart_cadastro img{
-   width:170px;
+.heart_cadastro img{
+   width:120px;
    height:auto;
    padding:0;
    margin:auto;
@@ -45,13 +45,13 @@ h2.text-cadastro{
 }
 
 /*......CONTAINER FORMULÁRIO.......*/
-div.container_cadastro{
+div.containers_cadastro{
    display:flex;
    flex-direction: column;
-   align-items: center;
+   align-items: start;
    justify-content: center;
    padding:10px;
-   margin:1em auto 0;
+   margin:auto;
    max-width:100%;
    height:auto;
    border-radius:5px solid #000000;
@@ -64,13 +64,13 @@ div.container_cadastro{
    text-align:center;
    width:85%;
    height:auto;
-   margin:0;
+   margin:0 auto;
    padding:0;
    box-shadow: 1px 1px 3px #000;
    font-size:1.2em;
    background-color:#a7fcff;
    position:absolute;
-   top:10px;
+   top:7em;
    border:1px dashed #8100dd;
 }
 
@@ -85,7 +85,6 @@ div.container_cadastro{
    flex-direction:column;
    align-items: center;
    align-content: center;
-   gap:15px;
 }
 
 .label_cadastro{
@@ -97,11 +96,11 @@ div.container_cadastro{
 }
 
 .input_cadastro{
-   width:clamp(280px, 500px, 33vw);
+  width:clamp(280px, 300px + 1vw, 1vw);
    height:auto;
    margin:5px auto 0;
    padding:10px 5px;
-   box-shadow:1px 1px 3px 3px #490949a4;  
+   box-shadow:1px 1px 3px 3px #490949a4;
    border:none;
 }
 

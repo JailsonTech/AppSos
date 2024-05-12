@@ -28,8 +28,8 @@ align-content: center;
 
 }
 
-figure.heart_login img{
-width:170px;
+.heart_login img{
+width:120px;
 height:auto;
 padding:0;
 margin:auto;

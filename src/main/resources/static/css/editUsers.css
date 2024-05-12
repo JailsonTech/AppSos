@@ -7,84 +7,18 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-margin:1em auto;
+margin:auto;
 padding:0;
-max-width:100%;
+max-width:max-content;
 height:auto;
-background-color: yellow;
-}
-div.aviso{
-   display:flex;
-   flex-direction: row;
-   align-items:center;
-   align-content:center;
-   margin:10px auto;
-   padding:0;
-   max-width: 100%;
-   height:auto;
-   background-color: #ffda6b;
-}
-a.messageCadastre{
-   display:flex;
-   flex-direction:row;
-   align-items:center;
-   justify-content:center;
-   gap:1em;
-   margin:0 auto;
-   padding:5px 7px;
-   width:100%;
-   height:auto;
-   cursor:pointer;
-   text-decoration: none;
-}
-
-/*...efeito mensagem Alerta...*/
-a.messageCadastre:hover{
-   background-color: #ffe38e;
-   box-shadow: 1px 1px 3px #4d4d4d;
-}
-
-figure.container_folder{
-   display:flex;
-   align-items: center;
-   max-width: 100%;
-   height:auto;
-   margin:auto;
-   padding:0;
-   text-align: center;
-}
-
-p.alerta_cadastre{
- display:flex;
- align-items: center;
-  max-width:100%;
-  height:auto;
-  margin:auto;
-  padding:0;
-  font-size:clamp(1.1em, 1em + .5vw, 1vw);
-  color:#b11919;
-  font-weight: 700;
-}
-
-/*........MENSAGEM DE SUCESSO........*/
-.alert_sucesso{
-    display:flex;
-    flex-direction:column;
-    align-content:center;
-    align-items:center;
-    text-align:center;
-    max-width:100%;
-    height:auto;
-    margin:auto;
-    padding:0;
-    font-size:1.2em;
-    background-color:#a0fafd;
+position:relative;
+background-color: #96969c;
 }
 
 /*.......FORMULÁRIO........*/
 .form_edit{
-    padding:15px 0;
-    margin:auto;
+    padding:15px 10px;
+    margin:1em auto;
     max-width:100%;
     height:auto;
     border-radius:5px solid #000000;
@@ -92,7 +26,18 @@ p.alerta_cadastre{
     flex-direction:column;
     align-items: center;
     align-content: center;
-    gap:15px;
+}
+
+div.container-inputs{
+   display:flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: center;
+   padding:10px;
+   margin:1em auto 0;
+   max-width:100%;
+   height:auto;
+   border-radius:5px solid #000000;   
 }
 
 label.editarNome{
@@ -103,8 +48,8 @@ label.editarNome{
     text-shadow: 2px 2px 5px #000;
 }
 
-.input_cadastro{
-   width:clamp(280px, 500px, 33vw);
+.input_edit{
+   width:clamp(280px, 300px + 1vw, 1vw);
    height:auto;
    margin:5px auto 0;
    padding:10px 5px;
@@ -113,7 +58,7 @@ label.editarNome{
 }
 
 /*.........MENSAGEM DE ERRO........*/
-p.message{
+p.messagem{
     color:#810000;
     text-align:center;
     padding:3px 5px;

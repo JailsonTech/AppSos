@@ -36,7 +36,7 @@
         <form class="form_cadastro" th:action="@{/salvar}" th:object="${newUser}"  method="post" id="userForm" >
             <!--... LIMPAR CAMPOS função em "cadastro.js" ...-->
 
-            <div class=" container_cadastro-nome">
+            <div class=" containers_cadastro container_cadastro-nome">
                 <label for="nome" class="label_cadastro label_cadastro-nome">Nome</label><br>
                 <input th:field="*{nome}" type="text" class="input_cadastro input_cadastro-nome" id="nome" name="nome" placeholder="Digite seu primeiro nome"><br>
 
@@ -69,11 +69,17 @@
             <button type="submit" class="btn-submit">Enviar</button>
         </form>
 
-        <!--...LINK PARA listUsers -> geral.css...-->
-        <p class="container-listUsers">
-            <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
-            <a th:href="@{/lista}"  class="link-users" >Usuários cadastrados</a>
-        </p>
+        <!--...LINK USERS CADASTRADOS -> geral.css...-->
+        <div class="container-linkUsersCadastrados">        
+        <figure class="container-listUsers">
+            <a th:href="@{/lista}" class="link-users link-person">
+                <img class="person" src="/images/user_gear_white.png" alt="ícon person/ ícone de uma pessoa">
+            </a>
+            <a th:href="@{/lista}" class="link-users">
+                <figcaption class="textFig">Usuários cadastrados</figcaption>
+            </a>
+        </figure>        
+        </div>
     </section>
 </body>
 </html>

@@ -12,23 +12,22 @@ a.arrow_link{
    padding:0; 
    top:0;
    left:3%;
-   position:absolute;
-   
+   position:absolute;   
 }
 
 figure.arrowLeft{
    margin:0;
    padding:0;
    display:flex;
-   flex-direction: column;
+   flex-direction: row;
    align-items: center;
 }
+
 img.arrow{
    width:clamp(2em, 3em + 1vw, 3vw);
-   height:auto;
- 
-
+   height:auto;   
 }   
+
 figcaption.text-sair{
    color:#34ffdd;
    margin:0 auto;
@@ -40,9 +39,16 @@ figcaption.text-sair:hover{
   color:#ffed4e;
 }
 
-
- /*.....LINK PARA listUsers......LOGIN E CADASTRO*/
-p.container-listUsers{
+/*..................................................*/
+ /*.....LINK USERS CADASTRADOS -> 'lista'...*/
+div.container-linkUsersCadastrados{
+   max-width:max-content;
+   height:auto;
+   margin: 0 auto;
+   padding:0;
+}
+ 
+figure.container-listUsers{
 text-align:center;
 display:flex;
 flex-direction: column;
@@ -52,28 +58,49 @@ width: content;
 height:auto;
 margin: 0.5em auto 0;
 padding:0;
-font-size: clamp(1.2em, 1em + .5vw, 2vw);  
 }
 
 img.person{
 width:30px;
 padding:5px;
-animation: sliding-vertically 1s forwards;
+cursor: pointer;
 }
 
 a.link-users{
+   text-decoration: none;
+   display: block;
+}
+
+figcaption.textFig{
 display:block;
 text-decoration: none;
 width:max-content;
 color:#fff;
 cursor: pointer;
+font-size: clamp(1.2em, 1em + .5vw, 2vw);  
 }
 
-a.link-users:hover{
-color:#a7ffbfda;
-text-shadow: 1px 1px 5px  #222;
+a.link-users:hover img.person{
+   box-shadow: .5px .5px 3px #ffbcbc;
+   border-radius: 15px;
+}
+a.link-users:active img.person{
+   transform:scale(.95);
+   box-shadow: -.5px -.5px 3px #adffad;
 }
 
+a.link-users:hover > .textFig{
+color:#63fff7da;
+text-shadow: 1px 1px 5px  #040d5e;
+}
+
+a.link-users:active .textFig{
+   transform:scale(.95);
+   color:#94ff63da; 
+}
+
+
+/*..................................................*/
 /*.....DROPDOWN-BAR_MENU  ->  home/listUsers.....*/
 
 nav.dropdown{
@@ -96,6 +123,7 @@ figure.barMenu{
    z-index:1;
    box-shadow: 1px 1px 3px #646464;
 }
+
 figure.barMenu:hover{
    cursor: pointer;
    box-shadow: 1px 1px 3px #b3b3b3;
@@ -161,33 +189,30 @@ a.dropdown-item{
    box-shadow:1px 1px 3px #000111;
 }
 
-/*...EFEITO HOVER....*/
+/*...efeito hover....*/
 a.dropdown-item:hover{
  background-color: #5f5e09c9;
    box-shadow:-1px -1px -3px #000111;   
 }
 
-/*...EFEITO ACTIIVE....*/
+/*...efeito active....*/
 a.dropdown-item:active{
  transform:scale(.99);
 box-shadow:1px 1px 3px #c7caff;  
  background-color: #42410196;
 }
 
-
 span.symbol{
    margin-right:10px;
 }
 
-/*.....EFEITO DROPDOWN JS...*/
+/*.....efeito dropdown javaScript...*/
 ul.dropdown-menu.active{
    opacity:1;
    height:max-content;
    visibility: visible;
-   
-
 }
-
+/*..................................................*/
 /*....BOTÃO SUBMIT -> Login / Cadastro....*/
 
 button.btn-submit{
@@ -202,17 +227,18 @@ box-shadow:1px 1px 3px #000000;
 color:#2b0b0b;
 font-size: clamp(1.1em, 1em + .8vw, 1.4vw);
 }
+
 button.btn-submit:hover{
 box-shadow:-1px -1px -3px #140224;
 color:#06585e;
 cursor: pointer;
 }
+
 button.btn-submit:active{
 box-shadow:1px 1px 3px #000000;
 transform:scale(.97);
 }
-
-
+/*..................................................*/
 /*..........FOOTER - home/listUsers...........*/
 #container-footer{
    display:flex;
@@ -226,7 +252,6 @@ transform:scale(.97);
    border-top:1px solid #350606;   
    background: linear-gradient(#d8cccc9c, #ff9e9e99);
 }
-
 
 a.house-link{
    display:block;
@@ -252,8 +277,7 @@ a.house-link{
    width:40px;
    height:auto;
    margin:0;
-   padding:0;   
-   
+   padding:0;      
 } 
 
 

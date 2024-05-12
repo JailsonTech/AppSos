@@ -78,21 +78,18 @@
         <td th:text="${user.nome}" class="td-list td-nome"></td>
         <td th:text="${user.email}" class="td-list td-email"></td>
         <td th:text="${user.senha}" class=".......td-list td-senha"></td>
+
         <td class="td-list td-delete">
-
           <!--.....APAGAR USUÁRIOS..........-->
-          <a th:href="@{/apagar/{id}(id=${user.id})}" class="link_act">
-            <figure class="container-act">
-              <img class="act" src="/images/trash_yellow.png" alt="lixeira" >
-            </figure>
-          </a>
-
-          <!--.....EDITAR USUÁRIOS..........-->
-          <a th:href="@{/editar/{id}(id=${user.id})}" class="link_act">
-            <figure class="container-act">
-              <img class="act" src="/images/edit.png" alt="lixeira">
-            </figure>
-          </a>
+          <figure class="container-act">
+              <a th:href="@{/apagar/{id}(id=${user.id})}" class="link_act">            
+                  <img class="act" src="/images/trash_yellow.png" alt="lixeira" >           
+              </a>
+              <!--.....EDITAR USUÁRIOS..........-->
+              <a th:href="@{/editar/{id}(id=${user.id})}" class="link_act">           
+                  <img class="act lapis" src="/images/edit.png" alt="lápis edição">            
+              </a>
+          </figure>
         </td>
       </tr>
     </table>
